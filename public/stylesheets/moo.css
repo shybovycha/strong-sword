@@ -18,6 +18,10 @@ nav.menu {
   float: left;
 }
 
+nav.menu a {
+  text-decoration: none;
+}
+
 nav {
   background-color: white;
   padding: 0 0.7em;
