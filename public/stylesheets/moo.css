@@ -1,5 +1,5 @@
 body {
-  background-color: #3359c9;
+  background-color: #3155c5;
 }
 
 .quote {
@@ -13,6 +13,12 @@ body {
   border-bottom: 5px solid #5500d9;
   margin-top: 5px;
   margin-bottom: 5px;
+}
+
+.author {
+  text-decoration: underline; 
+  text-indent: 20px; 
+  text-shadow: #000;
 }
 
 nav.menu {

@@ -2,7 +2,7 @@
 
 <% @quotes.each do |quote| %>
   <div class="quote">
-    <p><%= quote.author %></p>
+    <p class="author"><strong><%= quote.author %></strong></p>
     <p><%= quote.body %></p>
     <p>
 	    <%= link_to '#', quote %> |
