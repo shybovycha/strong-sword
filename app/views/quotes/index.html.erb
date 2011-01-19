@@ -1,27 +1,21 @@
-<h1>Listing quotes</h1>
-
-<table>
-  <tr>
-    <th>Author</th>
-    <th>Body</th>
-    <th>Approved</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<h1>Latest quotes</h1>
 
 <% @quotes.each do |quote| %>
-  <tr>
-    <td><%= quote.author %></td>
-    <td><%= quote.body %></td>
-    <td><%= quote.approved %></td>
-    <td><%= link_to 'Show', quote %></td>
-    <td><%= link_to 'Edit', edit_quote_path(quote) %></td>
-    <td><%= link_to 'Destroy', quote, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+  <div class="quote">
+    <p><%= quote.author %></p>
+    <p><%= quote.body %></p>
+    <p>
+	    <%= link_to '#', quote %> |
+	    <%= link_to 'Edit', edit_quote_path(quote) %> |
+	    <%= link_to 'Destroy', quote, :confirm => 'Are you sure?', :method => :delete %>
+    </p>
+  </div>
 <% end %>
-</table>
 
 <br />
 
-<%= link_to 'New Quote', new_quote_path %>
+<nav class="menu">
+  <ul>
+    <li><%= link_to '+', new_quote_path %></li>
+  </ul>
+</nav>

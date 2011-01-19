@@ -4,8 +4,8 @@ a {
 	border-bottom:1px dashed #000;
 }
 
-nav {
-  float: right;
+nav.menu {
+  float: left;
 }
 
 nav {
@@ -19,9 +19,9 @@ nav ul {
   padding: 0;
 }
 
-nav ul li {
+nav.menu ul li {
   list-style-type: none;
-  display: inline-block;
+  /*display: inline-block;*/
   padding: 0.2em 0;
 }
 

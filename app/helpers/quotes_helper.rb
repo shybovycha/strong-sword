@@ -1,9 +1,9 @@
 module QuotesHelper
 	def approved
 		if @approved.nil?
-			false
+			"Not approved yet"
 		else
-			true
+			"Approved"
 		end
 	end
 end
