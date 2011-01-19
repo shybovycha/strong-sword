@@ -18,9 +18,9 @@ a {
 }
 
 nav.menu {
-  position: absolute;
-  left: 2%;
-  top: 20%;
+  position: fixed;
+  left: 20px;
+  top: 300px;
   float: left;
 }
 
