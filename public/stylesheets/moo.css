@@ -1,18 +1,17 @@
 body {
-  background-color: #3155c5;
+  background-color: #CDBF6F;
 }
 
 .quote {
   position: relative;
   left: 20%;
   display: block;
-  background-color: #35e5e5;
+  background-color: #B8A74C;
   width: 30%;
-  padding: 15px 10px 0px 10px;
-  border-top: 5px solid #5500d9;
-  border-bottom: 5px solid #5500d9;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  padding: 10px 15px 10px 10px;
+  border-top: 5px solid #898464;
+  border-bottom: 5px solid #898464;
+  margin-top: 5px 0px 5px 0px;
 }
 
 .author {
