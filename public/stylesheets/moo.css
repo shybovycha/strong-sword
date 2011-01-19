@@ -1,3 +1,7 @@
+body {
+  background-color: #3359c9;
+}
+
 .quote {
   position: relative;
   left: 20%;
@@ -5,8 +9,8 @@
   background-color: #35e5e5;
   width: 30%;
   padding: 15px 10px 0px 10px;
-  border-top: 5px solid #d0d;
-  border-bottom: 5px solid #d0d;
+  border-top: 5px solid #5500d9;
+  border-bottom: 5px solid #5500d9;
   margin-top: 5px;
   margin-bottom: 5px;
 }
@@ -18,7 +22,7 @@ nav.menu {
   float: left;
 }
 
-nav.menu a {
+nav.menu a, nav.menu a:hover, nav.menu a:visited {
   text-decoration: none;
 }
 
