@@ -5,8 +5,8 @@ body {
   background-repeat: no-repeat;
 }
 
-input:text, textarea {
-  background-color: #B8A74C;
+input[type="text"], textarea {
+  background-color: #E6D167;
 }
 
 .content {
