@@ -13,8 +13,8 @@ development:
   encoding: unicode
   database: strong-sword_development
   pool: 5
-  username: strong-sword
-  password:
+  username: postgres
+  password: 1
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -39,13 +39,13 @@ test:
   encoding: unicode
   database: strong-sword_test
   pool: 5
-  username: strong-sword
-  password:
+  username: postgres
+  password: 1
 
 production:
   adapter: postgresql
   encoding: unicode
   database: strong-sword_production
   pool: 5
-  username: strong-sword
-  password:
+  username: postgres
+  password: 1
