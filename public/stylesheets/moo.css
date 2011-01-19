@@ -1,10 +1,11 @@
 body {
   background-color: #CDBF6F;
   background-image: url('../images/sword.gif');
-  background-position:right top;
+  background-position: right top;
+  background-repeat: no-repeat;
 }
 
-input, textarea {
+input:text, textarea {
   background-color: #B8A74C;
 }
 
