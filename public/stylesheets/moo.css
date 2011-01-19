@@ -1,8 +1,9 @@
 body {
   background-color: #CDBF6F;
   background-image: url('../images/sword.gif');
-  background-position: fixed right top;
+  background-position: right top;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 input[type="text"], textarea {
@@ -28,6 +29,10 @@ input[type="text"]:focus, textarea:focus {
   border-bottom: 5px solid #898464;
   font-variant:small-caps; 
   font-size:20px;
+}
+
+.quote:hover {
+  background-color: #DDC440;
 }
 
 .author {
