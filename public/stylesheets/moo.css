@@ -2,9 +2,12 @@ body {
   background-color: #CDBF6F;
 }
 
-.quote {
+.content {
   position: relative;
   left: 20%;
+}
+
+.quote {
   display: block;
   background-color: #B8A74C;
   width: 30%;
@@ -21,20 +24,24 @@ body {
 
 nav.menu {
   position: fixed;
-  left: 20px;
+  padding-left: 20px;
   top: 300px;
   float: left;
 }
 
-nav.menu a, a:hover, a:visited {
+a {
   text-decoration: none;
 }
 
+nav:hover {
+  background-color: #E6D167;
+}
+
 nav {
-  background-color: #898464;
+  background-color: #EBDC8E;
   padding: 0 0.7em;
   white-space: nowrap;
-  border-right: 2px solid #EBDC8E;
+  border-right: 2px solid #898464;
 }
 
 nav ul {
