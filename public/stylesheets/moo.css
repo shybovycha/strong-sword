@@ -27,7 +27,10 @@ input[type="text"]:focus, textarea:focus {
   padding: 10px 15px 10px 10px;
   border-top: 5px solid #B8A74C;
   border-bottom: 5px solid #B8A74C;
-  font-variant:small-caps; 
+}
+
+.quote-body {
+  font-variant:small-caps;
   font-size:20px;
 }
 
