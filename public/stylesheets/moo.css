@@ -11,7 +11,6 @@ body {
   padding: 10px 15px 10px 10px;
   border-top: 5px solid #898464;
   border-bottom: 5px solid #898464;
-  margin-top: 5px 0px 5px 0px;
 }
 
 .author {
@@ -27,14 +26,15 @@ nav.menu {
   float: left;
 }
 
-nav.menu a, nav.menu a:hover, nav.menu a:visited {
+nav.menu a, a:hover, a:visited {
   text-decoration: none;
 }
 
 nav {
-  background-color: white;
+  background-color: #898464;
   padding: 0 0.7em;
   white-space: nowrap;
+  border-right: 2px solid #EBDC8E;
 }
 
 nav ul {
