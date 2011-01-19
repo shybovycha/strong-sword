@@ -2,8 +2,8 @@ class QuotesController < ApplicationController
   # GET /quotes
   # GET /quotes.xml
   def index
-    #@quotes = Quote.all
-    @quotes = Quote.find_by_approved(true)
+    @quotes = Quote.all
+    #@quotes = Quote.find_by_approved(true)
 
     respond_to do |format|
       format.html # index.html.erb
