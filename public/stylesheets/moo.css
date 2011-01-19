@@ -4,7 +4,16 @@ a {
 	border-bottom:1px dashed #000;
 }
 
+.quote {
+  position: relative;
+  left: 20%;
+  display: block;
+  color: #35e5e5;
+}
+
 nav.menu {
+  position: fixed;
+  left: 2%;
   float: left;
 }
 
