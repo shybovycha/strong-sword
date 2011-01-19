@@ -9,6 +9,11 @@ input[type="text"], textarea {
   background-color: #EBDC8E;
 }
 
+input[type="text"]:focus, textarea:focus {
+  background-color: #E4DDBC;
+  border: 3px solid #EEBFCF;
+}
+
 .content {
   position: relative;
   left: 20%;
