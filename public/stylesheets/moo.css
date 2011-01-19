@@ -9,6 +9,10 @@ a {
   left: 20%;
   display: block;
   background-color: #35e5e5;
+  width: 30%;
+  padding: 15px 10px 0px 10px;
+  border-top: 2px solid #0dd;
+  border-bottom: 2px solid #0dd;
 }
 
 nav.menu {
