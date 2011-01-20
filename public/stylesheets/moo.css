@@ -53,16 +53,12 @@ nav.menu {
   float: left;
 }
 
-a {
+nav.menu p {
+  border-bottom: 2px solid #B8A74C;
+}
+
+a, a:hover, a:visited {
   text-decoration: none;
-}
-
-nav:hover {
-  background-color: #DDC440;
-}
-
-nav ul li:hover {
-  background-color: #E6D167;
 }
 
 nav {
@@ -72,14 +68,21 @@ nav {
   border-right: 3px solid #B8A74C;
 }
 
+nav:hover {
+  background-color: #DDC440;
+}
+
 nav ul {
   margin: 0;
   padding: 0;
 }
 
+nav ul li:hover {
+  background-color: #E6D167;
+}
+
 nav.menu ul li {
   list-style-type: none;
-  /*display: inline-block;*/
   padding: 0.2em 0;
 }
 
