@@ -4,6 +4,7 @@ StrongSword::Application.routes.draw do
   root :to => "quotes#index"
 
   match "/:id", :to => "quotes#show"
+  match "/:author", :to => "quotes#show"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
