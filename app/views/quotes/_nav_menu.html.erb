@@ -1,8 +1,8 @@
 <nav class="menu">
-  <p><%= @nav_menu.title %></p>
+  <p><%= @nav_menu[:title] %></p>
 
   <ul>
-    <% nav_menu[:links].each do |link| %>
+    <% @nav_menu[:links].each do |link| %>
 		<li><%= link_to link[:title], link[:to] %></li>
 	<% end %>
   </ul>
