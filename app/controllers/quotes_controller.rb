@@ -21,7 +21,7 @@ class QuotesController < ApplicationController
   def show
     @quote = Quote.find(params[:id])
     
-    @nav_menu = { :title => "###{@quote.id}", 
+    @nav_menu = { :title => "##{@quote.id}", 
     		  :links => [ { :title => "Edit", :to => edit_quote_path(@quote) },
 		  	      { :title => "Back", :to => root_path } 
 			    ] 
