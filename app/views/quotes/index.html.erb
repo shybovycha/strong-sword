@@ -4,8 +4,10 @@
     <p class="quote-body"><%= quote.body %></p>
     <p>
       <%= link_to '#', quote %> |
-      <%= link_to 'Edit', edit_quote_path(quote) %> |
-      <%= link_to 'Destroy', quote, :confirm => 'Are you sure?', :method => :delete %>
+      <% if false %>
+        <%= link_to 'Edit', edit_quote_path(quote) %> |
+        <%= link_to 'Destroy', quote, :confirm => 'Are you sure?', :method => :delete %>
+      <% end %>
     </p>
   </div>
   <br />
