@@ -9,11 +9,4 @@
   <%= @quote.body %>
 </p>
 
-<nav class="menu">
-  <p>#<%= @quote.id %></p>
-
-  <ul>
-    <li><%= link_to 'Edit', edit_quote_path(@quote) %></li>
-    <li><%= link_to 'Back', quotes_path %></li>
-  </ul>
-</nav>
+<%= render 'nav_menu' %>
