@@ -16,14 +16,26 @@ class QuotesController < ApplicationController
     end
   end
 
+  # GET /moo
+  # GET /quotes/moo
+  def author
+    @quotes = Quote.where(:author => params[:author])
+
+    @nav_menu = { :title => "#{params[:author]}", 
+    		  :links => [ { :title => "Back", :to => root_path } 
+			    ] 
+		}
+
+    respond_to do |format|
+      format.html # author.html.erb
+      format.xml  { render :xml => @quotes }
+    end
+  end
+
   # GET /quotes/1
   # GET /quotes/1.xml
   def show
-    if (Float(params[:id]) != nil rescue false) # :id is numeric
-       @quote = Quote.find(params[:id])
-    else
-       @quote = Quote.where("author" => params[:id]) # :id is a string
-    end
+    @quote = Quote.find(params[:id])
     
     @nav_menu = { :title => "##{@quote.id}", 
     		  :links => [ { :title => "Edit", :to => edit_quote_path(@quote) },

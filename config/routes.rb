@@ -3,7 +3,8 @@ StrongSword::Application.routes.draw do
 
   root :to => "quotes#index"
 
-  match "/:id", :to => "quotes#show"
+  match "/:id" => "quotes#show", :id => /\d{1,}/
+  match "/:author" => "quotes#author", :author => /\w{3,}/
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
