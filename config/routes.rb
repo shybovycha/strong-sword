@@ -8,7 +8,7 @@ StrongSword::Application.routes.draw do
 
   #match 'author/:author' => "quotes#author"
   #match 'quotes/:id' => "quotes#show"
-  #match '/:id' => 'quotes#show', :id => /\d{1,}/
+  match '/:id' => 'quotes#show', :id => /\d{1,}/
   match '/:author' => 'quotes#author', :author => /[\w\s\D]{3,}/ui
   match 'help/' => "statics#help"
   match 'help/about' => "statics#about"
