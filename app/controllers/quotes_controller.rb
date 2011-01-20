@@ -38,6 +38,10 @@ class QuotesController < ApplicationController
   def new
     @quote = Quote.new
 
+    @nav_menu = { :title => "Add quote", 
+    		  :links => [ { :title => "Back", :to => root_path } ] }
+
+
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @quote }
@@ -47,6 +51,9 @@ class QuotesController < ApplicationController
   # GET /quotes/1/edit
   def edit
     @quote = Quote.find(params[:id])
+
+    @nav_menu = { :title => "Edit quote", 
+    		  :links => [ { :title => "Back", :to => root_path } ] }
   end
 
   # POST /quotes
