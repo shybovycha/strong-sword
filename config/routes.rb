@@ -1,6 +1,5 @@
 StrongSword::Application.routes.draw do
   get "statics/about"
-
   get "statics/help"
 
   resources :quotes
