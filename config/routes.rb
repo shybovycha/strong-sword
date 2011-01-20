@@ -6,10 +6,12 @@ StrongSword::Application.routes.draw do
 
   root :to => "quotes#index"
 
-  match "author/:author" => "quotes#author"
-  match "quotes/:id" => "quotes#show"
-  match "help/" => "statics#help"
-  match "help/about" => "statics#about"
+  #match 'author/:author' => "quotes#author"
+  #match 'quotes/:id' => "quotes#show"
+  match 'quotes/:id' => "quotes#show", :id => /[\d]{1,}/
+  match 'quotes/:author' => "quotes#author", :author => /[^\d]{3,}/
+  match 'help/' => "statics#help"
+  match 'help/about' => "statics#about"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
