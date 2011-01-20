@@ -39,10 +39,12 @@ input[type="text"]:focus, textarea:focus {
   background-color: #E6D167;
 }
 
-.author {
-  text-decoration: underline; 
+.quote-author {
+  text-decoration: none; 
   text-indent: 20px; 
   text-shadow: #000;
+  font-family: "Lucida Console", Monaco, monospace;
+  border-bottom: 2px solid #B8A74C;
 }
 
 nav.menu {
