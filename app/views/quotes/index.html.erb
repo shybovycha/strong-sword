@@ -1,5 +1,3 @@
-<h1>Latest quotes</h1>
-
 <% @quotes.each do |quote| %>
   <div class="quote">
     <p class="author"><strong><%= quote.author %></strong></p>
@@ -16,6 +14,8 @@
 <br />
 
 <nav class="menu">
+  <p>Latest quotes</p>
+
   <ul>
     <li><%= link_to 'Add', new_quote_path %></li>
   </ul>
