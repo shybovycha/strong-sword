@@ -2,19 +2,16 @@
 
 <p>
   <b>Author:</b>
-  <%= @quote.author %>
+  <%= @quote.author %> ( <%= approved %> )
 </p>
 
-<p>
-  <b>Body:</b>
+<p class="quote-body">
   <%= @quote.body %>
 </p>
 
-<p>
-  <b>Approved:</b>
-  <%= approved %>
-</p>
-
-
-<%= link_to 'Edit', edit_quote_path(@quote) %> |
-<%= link_to 'Back', quotes_path %>
+<nav class="menu">
+  <ul>
+    <li><%= link_to 'Edit', edit_quote_path(@quote) %></li>
+    <li><%= link_to 'Back', quotes_path %></li>
+  </ul>
+</nav>
