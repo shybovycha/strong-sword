@@ -24,7 +24,7 @@ input[type="text"]:focus, textarea:focus {
 .quote {
   display: block;
   background-color: #EBDC8E;
-  width: 60%;
+  width: 90%;
   padding: 10px 15px 10px 10px;
   border-top: 5px solid #B8A74C;
   border-bottom: 5px solid #B8A74C;
