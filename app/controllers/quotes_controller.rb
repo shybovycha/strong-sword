@@ -19,10 +19,10 @@ class QuotesController < ApplicationController
   # GET /quotes/1
   # GET /quotes/1.xml
   def show
-    if !(params[:id].nil?)
-      @quote = Quote.find(params[:id])
-    elsif !(params[:author].nil?)
-      @quote = Quote.where(params[:author])
+    if (params[:id].nil?) #(Float(params[:id]) != nil rescue false)
+       @quote = Quote.where("author" => params[:author]) #params[:id])
+    else
+       @quote = Quote.find(params[:id])
     end
     
     @nav_menu = { :title => "##{@quote.id}", 
