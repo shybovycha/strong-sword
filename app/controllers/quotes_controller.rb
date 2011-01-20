@@ -22,7 +22,7 @@ class QuotesController < ApplicationController
     if (Float(params[:id]) != nil rescue false) # :id is numeric
        @quote = Quote.find(params[:id])
     else
-       @quote = Quote.where("author" => params[:author]) # :id is a string
+       @quote = Quote.where("author" => params[:id]) # :id is a string
     end
     
     @nav_menu = { :title => "##{@quote.id}", 
