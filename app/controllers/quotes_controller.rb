@@ -43,6 +43,8 @@ class QuotesController < ApplicationController
   def create
     @quote = Quote.new(params[:quote])
 
+    @quote.approved = false if @quote.approved.nil?
+
     respond_to do |format|
       if @quote.save
         format.html { redirect_to(@quote, :notice => 'Quote was successfully created.') }
