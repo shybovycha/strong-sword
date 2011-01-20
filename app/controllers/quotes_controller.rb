@@ -5,6 +5,11 @@ class QuotesController < ApplicationController
     @quotes = Quote.all.sort { |a, b| b.created_at <=> a.created_at }
     #@quotes = Quote.find_by_approved(true)
 
+    @nav_menu = { :title => "Latest quotes", 
+    		  :links => [ { :title => "Add", :to => new_quote_path } 
+		  	    ]
+		}
+
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @quotes }
@@ -15,6 +20,12 @@ class QuotesController < ApplicationController
   # GET /quotes/1.xml
   def show
     @quote = Quote.find(params[:id])
+    
+    @nav_menu = { :title => "###{@quote.id}", 
+    		  :links => [ { :title => "Edit", :to => edit_quote_path(@quote) },
+		  	      { :title => "Back", :to => root_path } 
+			    ] 
+		}
 
     respond_to do |format|
       format.html # show.html.erb
