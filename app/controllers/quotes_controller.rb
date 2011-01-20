@@ -1,3 +1,5 @@
+require 'cgi'
+
 class QuotesController < ApplicationController
   # GET /quotes
   # GET /quotes.xml
@@ -19,7 +21,7 @@ class QuotesController < ApplicationController
   # GET /moo
   # GET /quotes/moo
   def author
-    @quotes = Quote.where(:author => params[:author])
+    @quotes = Quote.where(:author => CGI::unescape(params[:author]))
 
     @nav_menu = { :title => "#{params[:author]}", 
     		  :links => [ { :title => "Back", :to => root_path } 
