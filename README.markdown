@@ -3,8 +3,8 @@
   This is gonna be a great quoting service!
 
 ##TODO:
-  * quoting
   * some kind of administrative page
+  * author autocomplete (via JS)
   * a great CAPTCHA
   * short-url-links for shares
   * basic SEO
@@ -12,3 +12,4 @@
   * profit!!!
 
   Note: visit [*official homepage*](http://strong-sword.heroku.com/) for more detail.
+  Lots of thanks to Metallica and Mago De Oz for their songs i've been listening for nearly two or three days all along!
