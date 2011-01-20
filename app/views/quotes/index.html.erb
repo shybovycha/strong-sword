@@ -3,7 +3,7 @@
     <p class="quote-author"><strong><%= quote.author %></strong></p>
     <p class="quote-body"><%= quote.body %></p>
     <p>
-	    <%= link_to '#', "#{root_url}/###{quote.id}" %> |
+	    <%= link_to '#', "#{root_url}/#{quote.id}" %> |
 	    <%= link_to 'Edit', edit_quote_path(quote) %> |
 	    <%= link_to 'Destroy', quote, :confirm => 'Are you sure?', :method => :delete %>
     </p>
