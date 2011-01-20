@@ -46,8 +46,9 @@ input[type="text"]:focus, textarea:focus {
 
 nav.menu {
   position: fixed;
-  padding-left: 20px;
+  left: 20px;
   top: 300px;
+  padding-left: 20px;
   float: left;
 }
 
