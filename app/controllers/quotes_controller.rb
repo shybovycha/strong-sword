@@ -8,9 +8,9 @@ class QuotesController < ApplicationController
     #@quotes = Quote.find_by_approved(true)
 
     @nav_menu = { :title => "Latest quotes", 
-    		      :links => [ { :title => "Add", :to => new_quote_path }#, 
-		  	      #{ :title => "About", :to => about_path },
-			      #{ :title => "Help", :to => help_path }
+    		      :links => [ { :title => "Add", :to => new_quote_path }, 
+		  	      { :title => "About", :to => about_path },
+			      { :title => "Help", :to => help_path }
 		  	    ]
 		}
 
@@ -26,7 +26,7 @@ class QuotesController < ApplicationController
     @quotes = Quote.where(:author => CGI::unescape(params[:author]))
 
     @nav_menu = { :title => "#{params[:author]}", 
-    		  :links => [ #{ :title => "Help", :to => help_path },
+    		  :links => [ { :title => "Help", :to => help_path },
 						{ :title => "Back", :to => root_path } 
 			    ] 
 		}
@@ -44,7 +44,7 @@ class QuotesController < ApplicationController
     
     @nav_menu = { :title => "##{@quote.id}", 
     		  :links => [ { :title => "Edit", :to => edit_quote_path(@quote) },
-			      #{ :title => "Help", :to => help_path },
+			      { :title => "Help", :to => help_path },
 		  	      { :title => "Back", :to => root_path } 
 			    ] 
 		}
@@ -61,7 +61,7 @@ class QuotesController < ApplicationController
     @quote = Quote.new
 
     @nav_menu = { :title => "Add quote", 
-    		  :links => [ #{ :title => "Help", :to => help_path },
+    		  :links => [ { :title => "Help", :to => help_path },
     		              { :title => "Back", :to => root_path } ] }
 
 
@@ -76,7 +76,7 @@ class QuotesController < ApplicationController
     @quote = Quote.find(params[:id])
 
     @nav_menu = { :title => "Edit quote", 
-    		  :links => [ #{ :title => "Help", :to => help_path },
+    		  :links => [ { :title => "Help", :to => help_path },
     		        { :title => "Back", :to => root_path } ] }
   end
 
