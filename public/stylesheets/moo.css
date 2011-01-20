@@ -55,6 +55,8 @@ nav.menu {
 
 nav.menu p {
   border-bottom: 2px solid #B8A74C;
+  font-size: 20px;
+  font-family: "Lucida Console", Monaco, monospace;
 }
 
 a, a:hover, a:visited {

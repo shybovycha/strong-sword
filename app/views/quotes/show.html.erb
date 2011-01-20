@@ -1,3 +1,5 @@
+<p id="notice"><%= notice %></p>
+<br />
 <p>
   <b>Author:</b>
   <%= @quote.author %> ( <%= approved %> )
@@ -8,7 +10,7 @@
 </p>
 
 <nav class="menu">
-  <p id="notice"><%= notice %></p>
+  <p>#<%= @quote.id %></p>
 
   <ul>
     <li><%= link_to 'Edit', edit_quote_path(@quote) %></li>
