@@ -6,7 +6,7 @@ StrongSword::Application.routes.draw do
 
   root :to => "quotes#index"
 
-  match "quotes/:author" => "quotes#author", :author => /[^\d]{3,}/u
+  match "author/:author" => "quotes#author", :author => /[^\d]{3,}/u
   match "quotes/:id" => "quotes#show", :id => /[\d]{1,}/
   match "help/" => "statics#help"
   match "help/about" => "statics#about"
