@@ -1,7 +1,7 @@
 body {
   background-color: #CDBF6F;
   background-image: url('../images/sword.gif');
-  background-position: right;
+  background-position: top right;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
