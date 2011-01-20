@@ -2,7 +2,7 @@ class QuotesController < ApplicationController
   # GET /quotes
   # GET /quotes.xml
   def index
-    @quotes = Quote.all
+    @quotes = Quote.all.sort { |a, b| b.created_at <=> a.created_at }
     #@quotes = Quote.find_by_approved(true)
 
     respond_to do |format|
