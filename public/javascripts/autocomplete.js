@@ -1,9 +1,9 @@
 $(function() {
 	$("#quote_author").autocomplete({
-			source: "/author_list",
+			source: "/authors",
 			minLength: 1
 		});
 		
-	$.getJSON("/author_list", function(data) { alert(data); });
+	$.getJSON("/authors", function(data) { alert(data); });
 	//alert("Hello, world!");
 });
