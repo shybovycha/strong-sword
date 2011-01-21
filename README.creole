@@ -1,15 +1,15 @@
-====== Strong-Sword project ======
+= Strong-Sword project =
 
   This is gonna be a great quoting service!
 
-===== TODO: =====
+== TODO: ==
   * some kind of administrative page
-  * -author autocomplete (via JS)-
+  * <del>author autocomplete (via JS)</del>
   * a great CAPTCHA
   * short-url-links for shares
   * basic SEO
   * ???
   * profit!!!
 
-  <<<Note: visit [*official homepage*](http://strong-sword.heroku.com/) for more detail.>>>
+  Note: visit [*official homepage*](http://strong-sword.heroku.com/) for more detail.
   Lots of thanks to Metallica and Mago De Oz for their songs i've been listening for nearly two or three days all along!
