@@ -4,10 +4,11 @@ StrongSword::Application.routes.draw do
 
   root :to => "quotes#index"
 
-  # These three lines fix some troubles as soon as i deleted
+  # These four lines fix some troubles as soon as i deleted
   # # resources :quotes
   # line. Feel free discovering more handy ways
 
+  match 'quotes/' => 'quotes#index', :as => :quotes
   match 'quotes/new' => 'quotes#new', :as => :new_quote
   match 'quotes/:id/edit' => 'quotes#edit', :id => /\d+/, :as => :edit_quote
 
