@@ -8,9 +8,9 @@ StrongSword::Application.routes.draw do
   # # resources :quotes
   # line. Feel free discovering more handy ways
 
-  match 'quotes/' => 'quotes#index', :as => :quotes
-  match 'quotes/new' => 'quotes#new', :as => :new_quote
-  match 'quotes/:id/edit' => 'quotes#edit', :id => /\d+/, :as => :edit_quote
+  #match 'quotes/' => 'quotes#index', :as => :quotes
+  #match 'quotes/new' => 'quotes#new', :as => :new_quote
+  #match 'quotes/:id/edit' => 'quotes#edit', :id => /\d+/, :as => :edit_quote
 
   match 'quotes/:id' => 'quotes#show', :id => /\d+/, :as => :quote
   match 'quotes/:author' => 'quotes#author', :author => /[^\d^\/]{3,}/ui
@@ -18,6 +18,8 @@ StrongSword::Application.routes.draw do
   match 'help/' => "statics#help"
   match 'help/about' => "statics#about"
   match 'author_list' => 'quotes#author_list'
+
+  resources :quotes
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
