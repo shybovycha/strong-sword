@@ -3,9 +3,11 @@
     <p class="quote-author"><strong><%= link_to quote.author, "/author/#{quote.author}" %></strong></p>
     <p class="quote-body"><%= quote.body %></p>
     <p>
-	    <%= link_to '#', "/#{quote.id}" %> |
-	    <%= link_to 'Edit', edit_quote_path(quote) %> |
-	    <%= link_to 'Destroy', quote, :confirm => 'Are you sure?', :method => :delete %>
+	    <%= link_to '#', "/#{quote.id}" %>
+	    <% if admin? %>
+	      &nbsp;<%= link_to 'Edit', edit_quote_path(quote) %>
+	      &nbsp;<%= link_to 'Destroy', quote, :confirm => 'Are you sure?', :method => :delete %>
+	    <% end %>
     </p>
   </div>
   <br />
