@@ -1,7 +1,7 @@
 require 'cgi'
 
 class QuotesController < ApplicationController
-  before_filter :authenticate, :except => [ :index, :show, :add ]
+  before_filter :authenticate, :except => [ :index, :show, :new ]
 
   # GET /quotes
   # GET /quotes.xml
