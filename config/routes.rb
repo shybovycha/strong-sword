@@ -12,7 +12,7 @@ StrongSword::Application.routes.draw do
   #match 'quotes/new' => 'quotes#new', :as => :new_quote
   #match 'quotes/:id/edit' => 'quotes#edit', :id => /\d+/, :as => :edit_quote
 
-  match 'quotes(/:id(/:action))', :id => /\d+/, :as => :quote, :defaults => { :action => :show }
+  match ':controller(/:id(/:action))', :id => /\d+/, :as => :quote, :defaults => { :action => :show, :controller => :quotes }
   match 'quotes/:author' => 'quotes#author', :author => /[^\/\d]{3,}/ui, :as => :author
   #match 'quotes/:id/:action' => "quotes#%action"
   match 'help/' => "statics#help"
