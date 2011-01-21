@@ -8,11 +8,10 @@ StrongSword::Application.routes.draw do
   # # resources :quotes
   # line. Feel free discovering more handy ways
 
-  match 'quotes/' => 'quotes#index', :as => :quote
   match 'quotes/new' => 'quotes#new', :as => :new_quote
   match 'quotes/:id/edit' => 'quotes#edit', :id => /\d+/, :as => :edit_quote
 
-  match 'quotes/:id' => 'quotes#show', :id => /\d+/
+  match 'quotes/:id' => 'quotes#show', :id => /\d+/, :as => :quote
   match 'quotes/:author' => 'quotes#author', :author => /[^\d^\/]{3,}/ui
   match 'quotes/:id/:action' => "quotes#%action"
   match 'help/' => "statics#help"
