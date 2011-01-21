@@ -4,10 +4,10 @@
     <p class="quote-body"><%= quote.body %></p>
     <p>
       <%= link_to '#', quote %>
-      <% if admin? %>
+      <% #if admin? %>
         &nbsp;<%= link_to 'Edit', edit_quote_path(quote) %>
         &nbsp;<%= link_to 'Destroy', quote, :confirm => 'Are you sure?', :method => :delete %>
-      <% end %>
+      <% #end %>
     </p>
   </div>
   <br />
