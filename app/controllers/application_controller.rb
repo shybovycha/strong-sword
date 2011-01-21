@@ -7,9 +7,8 @@ class ApplicationController < ActionController::Base
 
   def authenticate
     authenticate_or_request_with_http_basic do |username, password|
-      u = User.with(:username => username)
-
-      !(u.nil?) && (u.password == encode(password))
+      u = User.authenticate(username, password)
+      !(u.nil?)
     end
   end
 
