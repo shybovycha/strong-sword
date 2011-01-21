@@ -1,10 +1,12 @@
+require 'digest'
+
 class User < ActiveRecord::Base
-  attr_accessor :username, :password, :email
+  #attr_accessor :password
   attr_accessible :username, :password, :email, :password_confirmation
 
   validates :username, :presence => true,
   			:uniqueness => { :case_sensitive => false },
-			:length => { :within => 4 .. 40 }
+			:length => { :within => 3 .. 40 }
 
   validates :email, :presence => true,
   			:uniqueness => { :case_sensitive => false },
@@ -15,11 +17,11 @@ class User < ActiveRecord::Base
 			:confirmation => true
 
   before_save :encrypt_password
-
+  
   public
 
   def has_password?(phrase)
-    self.password == encrypt_password(phrase)
+    self.password == encrypt(phrase)
   end
 
   def self.authenticate(email, password)
@@ -29,9 +31,17 @@ class User < ActiveRecord::Base
     return user if user.has_password?(password)
   end
 
+  def encrypt(phrase)
+    return Digest::SHA2.hexdigest(phrase)
+  end
+
   private
 
   def encrypt_password
-    self.password = Digest::SHA2.hexdigest(Digest::MD5.hexdigest(self.password))
+    self.password = encrypt(self.password)
+  end
+
+  def set_noadmin
+    self.admin = false if self.admin.nil?
   end
 end
