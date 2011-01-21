@@ -9,6 +9,7 @@ StrongSword::Application.routes.draw do
   match 'quotes/:id/edit' => 'quotes#edit', :id => /\d+/
   match 'help/' => "statics#help"
   match 'help/about' => "statics#about"
+  #match 'author_list' => 'quotes#author_list'
 
   resources :quotes
 

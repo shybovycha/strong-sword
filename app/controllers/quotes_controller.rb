@@ -22,6 +22,19 @@ class QuotesController < ApplicationController
     end
   end
 
+  # GET /authors
+  def author_list
+    a = Array.new
+    
+    Quote.select("DISTINCT(author)").each { |i| a.push_back i.author.to_s }
+    
+    @list = ActiveSupport::JSON.encode(a)
+    
+    respond_to do |format|
+	  format.js  { render :json => { :data => @list } }
+    end
+  end
+  
   # GET /moo
   # GET /quotes/moo
   def author
