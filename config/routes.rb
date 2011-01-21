@@ -14,7 +14,7 @@ StrongSword::Application.routes.draw do
 
   match 'quotes/:id' => 'quotes#show', :id => /\d+/, :as => :quote
   match 'quotes/:author' => 'quotes#author', :author => /[^\d^\/]{3,}/ui, :as => :author
-  match 'quotes/:id/:action' => "quotes#%action"
+  #match 'quotes/:id/:action' => "quotes#%action"
   match 'help/' => "statics#help"
   match 'help/about' => "statics#about"
   match 'author_list' => 'quotes#author_list'
