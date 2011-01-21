@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   			:uniqueness => { :case_sensitive => false },
 			:format => { :with => /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
 
-  validates :password => :presence => true,
+  validates :password, :presence => true,
   			:length => { :within => 6 .. 40 },
 			:confirmation => true
 
