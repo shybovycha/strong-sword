@@ -24,7 +24,7 @@ class QuotesController < ApplicationController
 
   # GET /authors
   def author_list
-    @list = Quote.select("DISTINCT(author)").to_json
+    @list = Quote.select("DISTINCT(author)").to_json(:only => [ :author ])
     
     respond_to do |format|
 	  format.js  { render :json => @list }
