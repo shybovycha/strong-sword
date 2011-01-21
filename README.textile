@@ -11,6 +11,5 @@ h2. TODO:
   * ???
   * profit!!!
 
-  *Note:* visit "official homepage":http://strong-sword.heroku.com/ for more detail.
-
+  *Note:* visit "official homepage":http://strong-sword.heroku.com/ for more detail.<br />
   Lots of thanks to Metallica and Mago De Oz for their songs i've been listening for nearly two or three days all along!
