@@ -1,6 +1,6 @@
 <% @quotes.each do |quote| %>
   <div class="quote">
-    <p class="quote-author"><strong><%= link_to quote.author, "#{quotes_path}/#{quote.author}" %></strong></p>
+    <p class="quote-author"><strong><%= link_to quote.author, author_path(quote.author) %></strong></p>
     <p class="quote-body"><%= quote.body %></p>
     <p>
       <%= link_to '#', quote %>
