@@ -4,7 +4,7 @@ StrongSword::Application.routes.draw do
 
   root :to => "quotes#index"
 
-  match 'quotes/' => 'quotes#index', :as => :quotes
+  match 'quotes/' => 'quotes#index', :as => :quote
   match 'quotes/:id' => 'quotes#show', :id => /\d+/
   match 'quotes/:author' => 'quotes#author', :author => /[^\d^\/]{3,}/ui
   match 'quotes/:id/:action' => "quotes#%action"
