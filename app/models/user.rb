@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
 
   private
 
-  def encrypt_password(phrase)
-    self.password = Digest::SHA2.hexdigest(Digest::MD5.hexdigest(phrase))
+  def encrypt_password
+    self.password = Digest::SHA2.hexdigest(Digest::MD5.hexdigest(self.password))
   end
 end
