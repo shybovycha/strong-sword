@@ -12,7 +12,7 @@ class QuotesController < ApplicationController
     @quote = Quote.new
     #@quotes = Quote.find_by_approved(true)
 
-    @nav_menu = { :title => t(:latest_quotes), 
+    @nav_menu = { :title => I18n.t(:latest_quotes), 
     		      :links => [ #{ :title => "Add", :to => new_quote_path }, 
 		  	      { :title => :about, :to => "/help/about" },
 			      { :title => :help, :to => "/help/" }
@@ -83,7 +83,7 @@ class QuotesController < ApplicationController
 
     @quote = Quote.new
 
-    @nav_menu = { :title => t(:add_quote), 
+    @nav_menu = { :title => I18n.t(:add_quote), 
     		  :links => [ { :title => :help, :to => "/help/" },
     		              { :title => :back, :to => root_path } ] }
 
@@ -100,7 +100,7 @@ class QuotesController < ApplicationController
 
     @quote = Quote.find(params[:id])
 
-    @nav_menu = { t(:title => :edit), 
+    @nav_menu = { I18n.t(:title => :edit), 
     		  :links => [ { :title => :help, :to => "/help/" },
     		        { :title => :back, :to => root_path } ] }
   end
