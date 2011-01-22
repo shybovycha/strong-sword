@@ -4,8 +4,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   def lang
-    I18n.default_locale = params[:lang]
-    redirect_to "#{root_url}/#{I18n.default_locale}"
+    I18n.locale = params[:lang]
+    redirect_to "#{root_url}"
   end
 
   private
