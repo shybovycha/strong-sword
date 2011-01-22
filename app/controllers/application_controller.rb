@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   def lang
     I18n.default_locale = params[:lang]
-    redirect_to :back
+    redirect_to root_url
   end
 
   private
