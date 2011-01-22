@@ -25,23 +25,4 @@ $(document).ready(function() {
 					$.post(url, data, function(data) { alert(data); } );
 		}
 	});
-
-	$("a[data-method]").click(function() {
-			/*var form = new Element('form', { method: "POST", action: url, style: "display: none;" });
-		    $(this).parent().append(form);
-
-	    if (method !== 'post') {
-	      var field = new Element('input', { type: 'hidden', name: '_method', value: method });
-		      form.append(field);
-	    }
-
-	    if (csrf_param) {
-	      var param = csrf_param.attr('content'),
-		  token = csrf_token.attr('content'),
-		  field = new Element('input', { type: 'hidden', name: param, value: token });
-	      form.append(field);
-	    }
-
-	    form.submit();*/
-	});
 });
