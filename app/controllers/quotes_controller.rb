@@ -6,7 +6,7 @@ class QuotesController < ApplicationController
   # GET /quotes
   # GET /quotes.xml
   def index
-    I18n.default_locale = params[:lang]
+    I18n.locale = params[:lang]
 
     @quotes = Quote.all.sort { |a, b| b.created_at <=> a.created_at }
     @quote = Quote.new
@@ -39,7 +39,7 @@ class QuotesController < ApplicationController
   # GET /moo
   # GET /quotes/moo
   def author
-    I18n.default_locale = params[:lang]
+    I18n.locale = params[:lang]
 
     @quotes = Quote.where(:author => CGI::unescape(params[:author]))
     @quote = Quote.new
@@ -59,7 +59,7 @@ class QuotesController < ApplicationController
   # GET /quotes/1
   # GET /quotes/1.xml
   def show
-    I18n.default_locale = params[:lang]
+    I18n.locale = params[:lang]
 
     @quote = Quote.find(params[:id])
     
@@ -79,7 +79,7 @@ class QuotesController < ApplicationController
   # GET /quotes/new
   # GET /quotes/new.xml
   def new
-    I18n.default_locale = params[:lang]
+    I18n.locale = params[:lang]
 
     @quote = Quote.new
 
@@ -96,7 +96,7 @@ class QuotesController < ApplicationController
 
   # GET /quotes/1/edit
   def edit
-    I18n.default_locale = params[:lang]
+    I18n.locale = params[:lang]
 
     @quote = Quote.find(params[:id])
 

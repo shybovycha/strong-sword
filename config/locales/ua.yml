@@ -9,4 +9,5 @@ ua:
   latest_quotes: "Останні цитати"
   add_quote: "Додати цитату"
   quote_created: "Цитату створено!"
-  quote_updated: "Цитатуу оновлено!"
+  quote_updated: "Цитату оновлено!"
+  edit_quote: "Редагування"
