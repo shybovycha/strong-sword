@@ -7,6 +7,7 @@ class QuotesController < ApplicationController
   # GET /quotes.xml
   def index
     @quotes = Quote.all.sort { |a, b| b.created_at <=> a.created_at }
+    @quote = Quote.new
     #@quotes = Quote.find_by_approved(true)
 
     @nav_menu = { :title => "Latest quotes", 
@@ -25,7 +26,6 @@ class QuotesController < ApplicationController
   # GET /authors
   def author_list
 	a = Array.new
-	@quote = Quote.new
 	
 	Quote.select("DISTINCT(author)").each { |i| a << i.author }
 	
