@@ -3,6 +3,11 @@ require 'digest'
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+  def lang
+    I18n.default_locale = params[:lang]
+    redirect_to :back
+  end
+
   private
 
   def authenticate
