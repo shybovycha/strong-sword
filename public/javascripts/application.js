@@ -4,8 +4,8 @@ $(document).ready(function() {
 			return false;
 
 		if ($(this).attr("data-method")) {
-			var method = $(this).attr("data-method"),
-					url = $(this).attr("hhref"),
+			var _method = $(this).attr("data-method"),
+					_url = $(this).attr("hhref"),
 				csrf_param = $('meta[name=csrf-param]')[0],
 				csrf_token = $('meta[name=csrf-token]')[0],
 				_data = {};
@@ -20,9 +20,13 @@ $(document).ready(function() {
 				_data[param] = token;
 			}
 
-			alert('stage3');
-
-			$.post(url, _data, function(data) { alert(data); } );
+			$.ajaax({
+				url: _url,
+				type: _method,
+				async: false,
+				data: _data
+			});
+			//$.post(url, _data, function(data) { alert(data); } );
 		}
 	});
 });
