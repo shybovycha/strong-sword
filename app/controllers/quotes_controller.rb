@@ -6,7 +6,7 @@ class QuotesController < ApplicationController
   # GET /quotes
   # GET /quotes.xml
   def index
-    I18n.default_locale = :params[:lang]
+    I18n.default_locale = params[:lang]
 
     @quotes = Quote.all.sort { |a, b| b.created_at <=> a.created_at }
     @quote = Quote.new
