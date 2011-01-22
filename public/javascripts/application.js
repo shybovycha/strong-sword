@@ -8,19 +8,19 @@ $(document).ready(function() {
 					url = $(this).attr("hhref"),
 				csrf_param = $('meta[name=csrf-param]')[0],
 				csrf_token = $('meta[name=csrf-token]')[0],
-				data = {};
+				_data = {};
 
 			if (method !== 'post')
-				data['_method'] = method;
+				_data['_method'] = method;
 
 			if (csrf_param) {
 				var param = csrf_param.attr('content'),
 					token = csrf_token.attr('content');
 
-				data[param] = token;
+				_data[param] = token;
 			}
 
-			alert(data);
+			alert(_data);
 			$.post(url, data, function(data) { alert(data); } );
 		}
 	});
