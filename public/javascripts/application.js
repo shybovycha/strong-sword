@@ -10,8 +10,12 @@ $(document).ready(function() {
 				csrf_token = $('meta[name=csrf-token]')[0],
 				_data = {};
 
+			alert('stage1');
+
 			if (method !== 'post')
 				_data['_method'] = method;
+
+			alert('stage2');
 
 			if (csrf_param) {
 				var param = csrf_param.attr('content'),
@@ -20,8 +24,9 @@ $(document).ready(function() {
 				_data[param] = token;
 			}
 
-			alert(_data);
-			$.post(url, data, function(data) { alert(data); } );
+			alert('stage3');
+
+			$.post(url, _data, function(data) { alert(data); } );
 		}
 	});
 });
