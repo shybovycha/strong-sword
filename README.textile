@@ -4,7 +4,7 @@ h1. Strong-Sword project
 
 h2. TODO:
   * some kind of administrative page
-  * JS fixes
+  * -JS fixes-
   * -author autocomplete (via JS)-
   * a great CAPTCHA
   * short-url-links for shares
