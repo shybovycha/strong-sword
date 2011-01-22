@@ -18,6 +18,8 @@ $(document).ready(function() {
 			alert('stage2');
 
 			if (csrf_param) {
+				alert('s2: ' + csrf_param);
+
 				var param = csrf_param.attr('content'),
 					token = csrf_token.attr('content');
 
