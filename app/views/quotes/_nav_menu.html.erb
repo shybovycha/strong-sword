@@ -3,7 +3,7 @@
 
   <ul>
     <% @nav_menu[:links].each do |link| %>
-		<li><%= link_to link[:title], link[:to] %></li>
+		<li><%= link_to t(link[:title]), link[:to] %></li>
 	<% end %>
   </ul>
 </nav>
