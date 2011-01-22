@@ -100,7 +100,7 @@ class QuotesController < ApplicationController
 
     @quote = Quote.find(params[:id])
 
-    @nav_menu = { :title => "Edit quote", 
+    @nav_menu = { :title => :edit, 
     		  :links => [ { :title => :help, :to => "/help/" },
     		        { :title => :back, :to => root_path } ] }
   end
