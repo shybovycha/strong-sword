@@ -1,5 +1,5 @@
 onerror = function moo(msg, url, line) {
-	alert('Error: ' + msg + '\nURL: ' + url + '\nLine: ' + line);
+	//alert('Error: ' + msg + '\nURL: ' + url + '\nLine: ' + line);
 }
 
 $(document).ready(function() {
