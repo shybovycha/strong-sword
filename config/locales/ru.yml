@@ -1,0 +1,12 @@
+ru:
+  hello: "Привет, мир"
+  add: "Добавить"
+  edit: "Править"
+  delete: "Удалить"
+  help: "Помощь"
+  about: "О нас"
+  back: "Назад"
+  latest_quotes: "Последние цитаты"
+  add_quote: "Добавить цитату"
+  quote_created: "Цитата создана!"
+  quote_updated: "Цитата изменена!"
