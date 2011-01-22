@@ -10,7 +10,7 @@ class QuotesController < ApplicationController
     #@quotes = Quote.find_by_approved(true)
 
     @nav_menu = { :title => "Latest quotes", 
-    		      :links => [ { :title => "Add", :to => new_quote_path }, 
+    		      :links => [ #{ :title => "Add", :to => new_quote_path }, 
 		  	      { :title => "About", :to => "/help/about" },
 			      { :title => "Help", :to => "/help/" }
 		  	    ]
