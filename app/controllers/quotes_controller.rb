@@ -25,6 +25,7 @@ class QuotesController < ApplicationController
   # GET /authors
   def author_list
 	a = Array.new
+	@quote = Quote.new
 	
 	Quote.select("DISTINCT(author)").each { |i| a << i.author }
 	
@@ -37,6 +38,7 @@ class QuotesController < ApplicationController
   # GET /quotes/moo
   def author
     @quotes = Quote.where(:author => CGI::unescape(params[:author]))
+    @quote = Quote.new
 
     @nav_menu = { :title => "#{params[:author]}", 
     		  :links => [ { :title => "Help", :to => "/help/" },
