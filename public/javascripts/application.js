@@ -10,18 +10,12 @@ $(document).ready(function() {
 				csrf_token = $('meta[name=csrf-token]')[0],
 				_data = {};
 
-			alert('stage1');
-
 			if (method !== 'post')
 				_data['_method'] = method;
 
-			alert('stage2');
-
 			if (csrf_param) {
-				alert('s2: ' + csrf_param['content']);
-
-				var param = csrf_param.attr('content'),
-					token = csrf_token.attr('content');
+				var param = csrf_param['content'],
+					token = csrf_token['content'];
 
 				_data[param] = token;
 			}
