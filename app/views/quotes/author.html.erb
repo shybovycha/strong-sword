@@ -7,8 +7,8 @@
     <p>
 	    <%= link_to '#', quote %>
 	    <% #if admin? %>
-	      &nbsp;<%= link_to 'Edit', edit_quote_path(quote) %>
-	      &nbsp;<%= link_to 'Destroy', quote, :confirm => 'Are you sure?', :method => :delete %>
+	      &nbsp;<%= link_to t(:edit), edit_quote_path(quote) %>
+	      &nbsp;<%= link_to t(:delete), quote, :confirm => 'Are you sure?', :method => :delete %>
 	    <% #end %>
     </p>
   </div>

@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 <br />
 <p>
-  <b>Author:</b>
-  <%= @quote.author %> ( <%= approved? %> )
+  <b><%= t(:author) %></b>
+  <%= @quote.author %> ( <%= t(approved?) %> )
 </p>
 
 <p class="quote-body">

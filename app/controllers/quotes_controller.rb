@@ -6,14 +6,16 @@ class QuotesController < ApplicationController
   # GET /quotes
   # GET /quotes.xml
   def index
+    I18n.default_locale = :params[:lang]
+
     @quotes = Quote.all.sort { |a, b| b.created_at <=> a.created_at }
     @quote = Quote.new
     #@quotes = Quote.find_by_approved(true)
 
-    @nav_menu = { :title => "Latest quotes", 
+    @nav_menu = { :title => :latest_quotes, 
     		      :links => [ #{ :title => "Add", :to => new_quote_path }, 
-		  	      { :title => "About", :to => "/help/about" },
-			      { :title => "Help", :to => "/help/" }
+		  	      { :title => :about, :to => "/help/about" },
+			      { :title => :help, :to => "/help/" }
 		  	    ]
 		}
 
@@ -37,12 +39,14 @@ class QuotesController < ApplicationController
   # GET /moo
   # GET /quotes/moo
   def author
+    I18n.default_locale = :params[:lang]
+
     @quotes = Quote.where(:author => CGI::unescape(params[:author]))
     @quote = Quote.new
 
     @nav_menu = { :title => "#{params[:author]}", 
-    		  :links => [ { :title => "Help", :to => "/help/" },
-						{ :title => "Back", :to => root_path } 
+    		  :links => [ { :title => :help, :to => "/help/" },
+						{ :title => :back, :to => root_path } 
 			    ] 
 		}
 
@@ -55,12 +59,14 @@ class QuotesController < ApplicationController
   # GET /quotes/1
   # GET /quotes/1.xml
   def show
+    I18n.default_locale = :params[:lang]
+
     @quote = Quote.find(params[:id])
     
     @nav_menu = { :title => "##{@quote.id}", 
-    		  :links => [ { :title => "Edit", :to => edit_quote_path(@quote) },
-			      { :title => "Help", :to => "/help/" },
-		  	      { :title => "Back", :to => root_path } 
+    		  :links => [ { :title => :edit, :to => edit_quote_path(@quote) },
+			      { :title => :help, :to => "/help/" },
+		  	      { :title => :back, :to => root_path } 
 			    ] 
 		}
 
@@ -73,11 +79,13 @@ class QuotesController < ApplicationController
   # GET /quotes/new
   # GET /quotes/new.xml
   def new
+    I18n.default_locale = :params[:lang]
+
     @quote = Quote.new
 
-    @nav_menu = { :title => "Add quote", 
-    		  :links => [ { :title => "Help", :to => "/help/" },
-    		              { :title => "Back", :to => root_path } ] }
+    @nav_menu = { :title => :add_quote, 
+    		  :links => [ { :title => :help, :to => "/help/" },
+    		              { :title => :back, :to => root_path } ] }
 
 
     respond_to do |format|
@@ -88,11 +96,13 @@ class QuotesController < ApplicationController
 
   # GET /quotes/1/edit
   def edit
+    I18n.default_locale = :params[:lang]
+
     @quote = Quote.find(params[:id])
 
     @nav_menu = { :title => "Edit quote", 
-    		  :links => [ { :title => "Help", :to => "/help/" },
-    		        { :title => "Back", :to => root_path } ] }
+    		  :links => [ { :title => :help, :to => "/help/" },
+    		        { :title => :back, :to => root_path } ] }
   end
 
   # POST /quotes
@@ -104,7 +114,7 @@ class QuotesController < ApplicationController
 
     respond_to do |format|
       if @quote.save
-        format.html { redirect_to(@quote, :notice => 'Quote was successfully created.') }
+        format.html { redirect_to(@quote, :notice => :quote_created) }
         format.xml  { render :xml => @quote, :status => :created, :location => @quote }
       else
         format.html { render :action => "new" }
@@ -120,7 +130,7 @@ class QuotesController < ApplicationController
 
     respond_to do |format|
       if @quote.update_attributes(params[:quote])
-        format.html { redirect_to(@quote, :notice => 'Quote was successfully updated.') }
+        format.html { redirect_to(@quote, :notice => :quote_updated) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
