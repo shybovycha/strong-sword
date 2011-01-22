@@ -1,3 +1,5 @@
+<% render 'form' %>
+<br /><hr /><br />
 <% @quotes.each do |quote| %>
   <div class="quote">
     <p class="quote-author"><strong><%= link_to quote.author, author_path(quote.author) %></strong></p>
