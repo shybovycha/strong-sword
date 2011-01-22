@@ -4,8 +4,6 @@ $(document).ready(function() {
 			return false;
 
 		if ($(this).attr("data-method")) {
-			alert("moo");
-
 			var method = $(this).attr("data-method"),
 					url = $(this).attr("hhref"),
 				csrf_param = $('meta[name=csrf-param]')[0],
@@ -22,9 +20,8 @@ $(document).ready(function() {
 				data[param] = token;
 			}
 
-			if (!confirm(data))
-				return false; else
-					$.post(url, data, function(data) { alert(data); } );
+			alert(data);
+			$.post(url, data, function(data) { alert(data); } );
 		}
 	});
 });
