@@ -11,6 +11,8 @@ StrongSword::Application.routes.draw do
   match 'author_list' => 'quotes#author_list'
   match 'author/:author' => 'quotes#author', :as => :author
   match 'lang/:lang' => 'application#lang'
+  match ':controller(/:id(/:action))/lang/:lang'
+  match ':controller(/:action)/lang/:lang'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
