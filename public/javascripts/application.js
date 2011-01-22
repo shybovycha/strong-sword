@@ -1,3 +1,6 @@
 $(document).ready(function() {
-	$("[data-confirm]").each(function(i, e) { alert($(this).attr("href")); });
+	$("[data-confirm]").click(function() { 
+		if (!confirm($(this).attr"href"))
+			return false;
+	});
 });
