@@ -4,6 +4,8 @@ $(document).ready(function() {
 			return false;
 
 		if ($(this).attr("data-method")) {
+			alert("moo");
+
 			var method = $(this).attr("data-method"),
 					url = $(this).attr("hhref"),
 				csrf_param = $('meta[name=csrf-param]')[0],
