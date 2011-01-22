@@ -8,19 +8,19 @@ $(document).ready(function() {
 					_url = $(this).attr("hhref"),
 				csrf_param = $('meta[name=csrf-param]')[0],
 				csrf_token = $('meta[name=csrf-token]')[0],
-				_data = {};
+				_data = '';
 
 			if (method !== 'post')
-				_data['_method'] = method;
+				_data += '_method=' + method +  '&';
 
 			if (csrf_param) {
 				var param = csrf_param['content'],
 					token = csrf_token['content'];
 
-				_data[param] = token;
+				_data += param + '=' + token + '&';
 			}
 
-			$.ajaax({
+			$.ajax({
 				url: _url,
 				type: _method,
 				async: false,
