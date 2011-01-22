@@ -1,7 +1,8 @@
 $(document).ready(function() {
 	$("[data-confirm]").click(function() { 
 		if (!confirm($(this).attr("data-confirm")))
-			return false;
+			return false; else
+				$(this).click();
 	});
 
 	$("a[data-method]").click(function() {
