@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   def lang
     I18n.locale = params[:lang]
-    redirect_to "#{root_url}"
+    redirect_to request.referer
   end
 
   private
