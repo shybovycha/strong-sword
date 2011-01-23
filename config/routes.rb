@@ -9,7 +9,7 @@ StrongSword::Application.routes.draw do
   match 'help/' => "statics#help"
   match 'help/about' => "statics#about"
   match 'author_list' => 'quotes#author_list'
-  match 'author/:author' => 'quotes#author', :as => :author
+  match 'author/:author' => 'quotes#author', :author => /[^\/\d]+/, :as => :author
   match 'lang/:lang' => 'application#lang'
   match ':controller(/:id(/:action))/lang/:lang'
   match ':controller(/:action)/lang/:lang'
