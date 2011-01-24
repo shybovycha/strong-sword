@@ -15,3 +15,4 @@ ua:
   log_in: "Вхід"
   log_out: "Вихід"
   admin_page: "Керування"
+  r_u_sure: "Ви впевнені?"
