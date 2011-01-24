@@ -3,7 +3,13 @@
 
   <ul>
     <% @nav_menu[:links].each do |link| %>
-		<li><%= link_to t(link[:title]), link[:to] %></li>
-	<% end %>
+      <li><%= link_to t(link[:title]), link[:to] %></li>
+    <% end %>
+
+    <% if logged_in? %>
+      <%= link_to t(:log_out), "/logout/" %>
+    <% else %>
+      <%= link_to t(:log_in), "/login/" %>
+    <% end %>
   </ul>
 </nav>

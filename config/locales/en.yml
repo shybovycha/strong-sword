@@ -14,3 +14,5 @@ en:
   quote_created: "Quote was created!"
   quote_updated: "Quote was updated!"
   edit_quote: "Edit quote"
+  log_in: "Log in"
+  log_out: "Log out"

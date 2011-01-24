@@ -13,6 +13,11 @@ class ApplicationController < ActionController::Base
     redirect_to root_url
   end
 
+  def log_out
+    session[:uid] = nil
+    redirect_to root_url
+  end
+
   private
 
   def authenticate

@@ -11,3 +11,5 @@ ua:
   quote_created: "Цитату створено!"
   quote_updated: "Цитату оновлено!"
   edit_quote: "Редагування"
+  log_in: "Вхід"
+  log_out: "Вихід"

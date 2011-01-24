@@ -11,3 +11,5 @@ ru:
   quote_created: "Цитата создана!"
   quote_updated: "Цитата изменена!"
   edit_quote: "Правка"
+  log_in: "Войти"
+  log_out: "Выйти"
