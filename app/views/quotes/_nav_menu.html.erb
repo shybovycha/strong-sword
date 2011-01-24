@@ -9,7 +9,7 @@
     <% if logged_in? %>
       <%= link_to t(:log_out), "/logout/" %>
     <% else %>
-      <%= link_to t(:log_in), "/login/" %>
+      <li><%= link_to t(:log_in), "/login/" %></li>
     <% end %>
   </ul>
 </nav>
