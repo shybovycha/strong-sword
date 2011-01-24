@@ -12,12 +12,14 @@ class QuotesController < ApplicationController
     @quote = Quote.new
     #@quotes = Quote.find_by_approved(true)
 
+=begin
     @nav_menu = { :title => I18n.t(:latest_quotes), 
     		      :links => [ #{ :title => "Add", :to => new_quote_path }, 
 		  	      { :title => :about, :to => "/help/about" },
 			      { :title => :help, :to => "/help/" }
 		  	    ]
 		}
+=end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -44,11 +46,13 @@ class QuotesController < ApplicationController
     @quotes = Quote.where(:author => CGI::unescape(params[:author]))
     @quote = Quote.new
 
+=begin
     @nav_menu = { :title => "#{params[:author]}", 
     		  :links => [ { :title => :help, :to => "/help/" },
 						{ :title => :back, :to => root_path } 
 			    ] 
 		}
+=end
 
     respond_to do |format|
       format.html # author.html.erb
@@ -62,13 +66,15 @@ class QuotesController < ApplicationController
     I18n.locale = params[:lang]
 
     @quote = Quote.find(params[:id])
-    
+
+=begin
     @nav_menu = { :title => "##{@quote.id}", 
     		  :links => [ { :title => :edit, :to => edit_quote_path(@quote) },
 			      { :title => :help, :to => "/help/" },
 		  	      { :title => :back, :to => root_path } 
 			    ] 
 		}
+=end
 
     respond_to do |format|
       format.html # show.html.erb
@@ -83,10 +89,11 @@ class QuotesController < ApplicationController
 
     @quote = Quote.new
 
+=begin
     @nav_menu = { :title => I18n.t(:add_quote), 
     		  :links => [ { :title => :help, :to => "/help/" },
     		              { :title => :back, :to => root_path } ] }
-
+=end
 
     respond_to do |format|
       format.html # new.html.erb
@@ -100,9 +107,11 @@ class QuotesController < ApplicationController
 
     @quote = Quote.find(params[:id])
 
+=begin
     @nav_menu = { :title => I18n.t(:edit), 
     		  :links => [ { :title => :help, :to => "/help/" },
     		        { :title => :back, :to => root_path } ] }
+=end
   end
 
   # POST /quotes
