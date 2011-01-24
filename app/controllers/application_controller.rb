@@ -9,10 +9,8 @@ class ApplicationController < ActionController::Base
   end
 
   def log_in
-    respond_to do |format|
-      authenticate
-      redirect_to request.referer
-    end
+    authenticate
+    redirect_to request.referer
   end
 
   private
