@@ -1,7 +1,7 @@
 require 'cgi'
 
 class QuotesController < ApplicationController
-  before_filter :authenticate, :only => [ :edit, :delete ]
+  before_filter :authenticate, :only => [ :edit, :delete, :admin ]
 
   # GET /quotes
   # GET /quotes.xml
@@ -24,6 +24,14 @@ class QuotesController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @quotes }
+    end
+  end
+
+  def admin
+    retirect_to '/login/' if !logged_in?
+
+    respond_to do |format|
+      format.html
     end
   end
 
