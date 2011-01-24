@@ -9,8 +9,8 @@ class ApplicationController < ActionController::Base
   end
 
   def log_in
-    authenticate
-    redirect_to request.referer
+    self.authenticate
+    redirect_to root_url
   end
 
   private
