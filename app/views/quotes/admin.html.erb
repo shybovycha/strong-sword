@@ -1,1 +1,18 @@
-<h1>Administration goes here</h1>
+<h1>Unapproved quotes</h1>
+<% @quotes.each do |quote| %>
+  <div class="quote">
+    <p class="quote-author"><strong><%= link_to quote.author, author_path(quote.author) %></strong></p>
+    <p class="quote-body"><%= quote.body %></p>
+    <p>
+      <%= link_to '#', quote %>
+      <% if logged_in? %>
+        &nbsp;<%= link_to t(:edit), edit_quote_path(quote) %>
+        &nbsp;<%= link_to t(:delete), quote, :confirm => t(:r_u_sure), :method => :delete %>
+	&nbsp;<%= link-to t(:approve), "quotes/#{quote.id}/approve", :confirm => t(:r_u_sure) %>
+      <% end %>
+    </p>
+  </div>
+  <br />
+<% end %>
+
+<br />

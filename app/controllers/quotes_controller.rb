@@ -8,18 +8,8 @@ class QuotesController < ApplicationController
   def index
     I18n.locale = params[:lang]
 
-    @quotes = Quote.all.sort { |a, b| b.created_at <=> a.created_at }
     @quote = Quote.new
-    #@quotes = Quote.find_by_approved(true)
-
-=begin
-    @nav_menu = { :title => I18n.t(:latest_quotes), 
-    		      :links => [ #{ :title => "Add", :to => new_quote_path }, 
-		  	      { :title => :about, :to => "/help/about" },
-			      { :title => :help, :to => "/help/" }
-		  	    ]
-		}
-=end
+    @quotes = Quote.find_by_approved(true).sort { |a, b| b.created_at <=> a.created_at }
 
     respond_to do |format|
       format.html # index.html.erb
@@ -27,8 +17,22 @@ class QuotesController < ApplicationController
     end
   end
 
+  def approve
+    redirect_to root_url if (session[:uid].nil? || User.find(session[:uid]).nil?)
+
+    quote = Quote.find(params[:id])
+
+    redirect_to '/admin/' if quote.nil?
+
+    quote.update_attribute(:approved, true)
+
+    redirect_to '/admin/'
+  end
+
   def admin
     retirect_to '/login/' if (!session[:uid] || User.find(session[:uid]).nil?)
+
+    @quotes = Quote.find_by_approved(false).sort { |a, b| b.created_at <=> a.created_at }
 
     respond_to do |format|
       format.html
@@ -37,9 +41,9 @@ class QuotesController < ApplicationController
 
   # GET /authors
   def author_list
-	a = Array.new
+    a = Array.new
 	
-	Quote.select("DISTINCT(author)").each { |i| a << i.author }
+    Quote.select("DISTINCT(author)").each { |i| a << i.author }
 	
     respond_to do |format|
 	  format.js  { render :json => a.to_json }
@@ -54,14 +58,6 @@ class QuotesController < ApplicationController
     @quotes = Quote.where(:author => CGI::unescape(params[:author]))
     @quote = Quote.new
 
-=begin
-    @nav_menu = { :title => "#{params[:author]}", 
-    		  :links => [ { :title => :help, :to => "/help/" },
-						{ :title => :back, :to => root_path } 
-			    ] 
-		}
-=end
-
     respond_to do |format|
       format.html # author.html.erb
       format.xml  { render :xml => @quotes }
@@ -74,15 +70,6 @@ class QuotesController < ApplicationController
     I18n.locale = params[:lang]
 
     @quote = Quote.find(params[:id])
-
-=begin
-    @nav_menu = { :title => "##{@quote.id}", 
-    		  :links => [ { :title => :edit, :to => edit_quote_path(@quote) },
-			      { :title => :help, :to => "/help/" },
-		  	      { :title => :back, :to => root_path } 
-			    ] 
-		}
-=end
 
     respond_to do |format|
       format.html # show.html.erb
@@ -97,12 +84,6 @@ class QuotesController < ApplicationController
 
     @quote = Quote.new
 
-=begin
-    @nav_menu = { :title => I18n.t(:add_quote), 
-    		  :links => [ { :title => :help, :to => "/help/" },
-    		              { :title => :back, :to => root_path } ] }
-=end
-
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @quote }
@@ -114,12 +95,6 @@ class QuotesController < ApplicationController
     I18n.locale = params[:lang]
 
     @quote = Quote.find(params[:id])
-
-=begin
-    @nav_menu = { :title => I18n.t(:edit), 
-    		  :links => [ { :title => :help, :to => "/help/" },
-    		        { :title => :back, :to => root_path } ] }
-=end
   end
 
   # POST /quotes
