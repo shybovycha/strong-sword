@@ -2,6 +2,7 @@ require 'digest'
 
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  before_filter :authenticate, :only => [ :log_in ]
 
   def lang
     I18n.locale = params[:lang]
@@ -9,7 +10,6 @@ class ApplicationController < ActionController::Base
   end
 
   def log_in
-    self.authenticate
     redirect_to root_url
   end
 
