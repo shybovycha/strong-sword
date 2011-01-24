@@ -6,6 +6,7 @@ ua:
   help: "Допомога"
   back: "Повернутись"
   about: "Про нас"
+  approve: "Підтвердити"
   latest_quotes: "Останні цитати"
   add_quote: "Додати цитату"
   quote_created: "Цитату створено!"
