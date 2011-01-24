@@ -28,7 +28,7 @@ class QuotesController < ApplicationController
   end
 
   def admin
-    retirect_to '/login/' if !logged_in?
+    retirect_to '/login/' if (!session[:uid] || User.find(session[:uid]).nil?)
 
     respond_to do |format|
       format.html
