@@ -7,7 +7,7 @@
     <% end %>
 
     <% if logged_in? %>
-      <%= link_to t(:log_out), "/logout/" %>
+      <li><%= link_to t(:log_out), "/logout/" %></li>
     <% else %>
       <li><%= link_to t(:log_in), "/login/" %></li>
     <% end %>

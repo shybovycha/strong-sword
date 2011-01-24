@@ -14,7 +14,17 @@
 <body>
 
 <div class="content">
-<%= yield %>
+  <%= yield %>
+</div>
+
+<div class='footer'>
+  <ul>
+    <li><%= link_to t(:help), "/help/" %></li>
+    <li><%= link_to t(:admin_page), "/admin/" %></li>
+    <% if logged_in? %>
+      <li><%= link_to t(:log_out), "/logout/" %></li>
+    <% end %>
+  </ul>
 </div>
 
 </body>

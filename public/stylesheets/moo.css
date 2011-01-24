@@ -103,6 +103,14 @@ nav ul li a:hover {
   text-decoration: underline;
 }
 
+.footer ul {
+  display: inline;
+}
+
+.footer ul li {
+  list-style-type: none;
+}
+
 #notice {
   color: green;
 }
