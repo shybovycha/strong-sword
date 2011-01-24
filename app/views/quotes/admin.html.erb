@@ -8,7 +8,7 @@
       <% if logged_in? %>
         &nbsp;<%= link_to t(:edit), edit_quote_path(quote) %>
         &nbsp;<%= link_to t(:delete), quote, :confirm => t(:r_u_sure), :method => :delete %>
-	&nbsp;<%= link_to t(:approve), "quotes/#{quote.id}/approve", :confirm => t(:r_u_sure) %>
+	&nbsp;<%= link_to t(:approve), "/quotes/#{quote.id}/approve", :confirm => t(:r_u_sure) %>
       <% end %>
     </p>
   </div>

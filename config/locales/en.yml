@@ -3,6 +3,7 @@
 
 en:
   hello: "Hello world"
+  home: "Home"
   add: "Add"
   edit: "Edit"
   delete: "Delete"
@@ -19,3 +20,5 @@ en:
   log_out: "Log out"
   admin_page: "Administration"
   r_u_sure: "Are you sure?"
+  approved: "Approved"
+  unapproved: "Not approved yet"
