@@ -8,11 +8,21 @@ class ApplicationController < ActionController::Base
     redirect_to request.referer
   end
 
+  def log_in
+    respond_to do |format|
+      authenticate
+      redirect_to request.referer
+    end
+  end
+
   private
 
   def authenticate
     authenticate_or_request_with_http_basic do |username, password|
       u = User.authenticate(username, password)
+
+      session[:uid] = u.id if (u)
+
       !(u.nil?)
     end
   end

@@ -6,7 +6,8 @@ StrongSword::Application.routes.draw do
 
   resources :quotes
 
-  match ':whatever/lang/:lang' => 'application#lang', :whatever => /.*/
+  #match ':whatever/lang/:lang' => 'application#lang', :whatever => /.*/
+  match 'login/' => "application#log_in"
   match 'help/' => "statics#help"
   match 'help/about' => "statics#about"
   match 'author_list' => 'quotes#author_list'
