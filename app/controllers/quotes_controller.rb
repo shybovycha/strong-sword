@@ -9,7 +9,7 @@ class QuotesController < ApplicationController
     I18n.locale = params[:lang]
 
     @quote = Quote.new
-    @quotes = Quote.find_by_approved(true).sort { |a, b| b.created_at <=> a.created_at }
+    @quotes = Quote.where(:approved => true).sort { |a, b| b.created_at <=> a.created_at }
 
     respond_to do |format|
       format.html # index.html.erb
@@ -32,7 +32,7 @@ class QuotesController < ApplicationController
   def admin
     retirect_to '/login/' if (!session[:uid] || User.find(session[:uid]).nil?)
 
-    @quotes = Quote.find_by_approved(false).sort { |a, b| b.created_at <=> a.created_at }
+    @quotes = (Quote.where(:approved => false) + Quote.where(:approved => nil)).sort { |a, b| b.created_at <=> a.created_at }
 
     respond_to do |format|
       format.html
