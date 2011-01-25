@@ -3,7 +3,7 @@ h1. Strong-Sword project
   This is gonna be a great quoting service!
 
 h2. TODO:
-  * some kind of administrative page
+  * -some kind of administrative page-
   * -JS fixes-
   * -author autocomplete (via JS)-
   * a great CAPTCHA
