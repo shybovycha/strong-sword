@@ -7,7 +7,7 @@ function moo() {
 
 	$.getJSON('/after/' + $("div.quote:first").attr("id"), function(data) {
 		cnt = $.parseJSON(data).length;
-		type = typeof data;
+		alert("Type: " + typeof data);
 	});
 
 	if (cnt > 0)
@@ -29,6 +29,7 @@ $(document).ready(function() {
 
 				if (resp[0].done == "ok") {
 					$(".msg").css("background-color", "#00fe00").text("Ok").fadeIn('slow').delay(5000).fadeOut('slow');
+					$("#quote_author,#quote_body").text("");
 				} else {
 					$(".msg").css("background-color", "#fe0000").text("Something went wrong. Please, retry").fadeIn('slow').delay(5000).fadeOut('slow');
 				}
