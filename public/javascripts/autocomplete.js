@@ -3,7 +3,7 @@ onerror = function moo(msg, url, line) {
 }
 
 $(document).ready(function() {
-	function checkForNewQuotes() {
+	function moo() {
 		var cnt = 0;
 		
 		$.getJSON('/after/' + $("div.quote:first").attr("id"), function(data) {
@@ -12,10 +12,10 @@ $(document).ready(function() {
 
 		$(".msg").css("background-color", "#ffff00").fadeIn('slow').delay(10000).fadeOut('slow');
 
-		setTimeout("checkForNewQuotes();", 30000);
+		setTimeout("moo()", 30000);
 	}
 
-	var to = setTimeout("checkForNewQuotes();", 30000);
+	var to = setTimeout("moo()", 30000);
 
 	$.getJSON("/author_list", function(data) { 
 		$("#quote_author").autocomplete({ source: data, minLength: 1 }) 
