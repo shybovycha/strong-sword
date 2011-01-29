@@ -12,21 +12,17 @@ function moo() {
 		if (cnt > 0) {
 			$(".msg").css("background-color", "#ffff00").text(cnt + " new quotes found. Click here to update").fadeIn('slow').delay(20000).fadeOut('slow');
 		
-			var n = $(".content > .quote").size();
+			//var n = $(".content > .quote").size();
 
-			$.ajax({
-				url:"/after/" + id,
-				dataType: "html",
-				success: function(data) {
-					$("div#" + id).before(data);
-				}
+			$.get("/after/" + id, function(data) {
+				$("div#" + id).before(data);
 			});
 
-			n = $(".content > .quote").size() - n;
+			/*n = $(".content > .quote").size() - n;
 
 			$(".content > .quote:lt(" + n + ")").each(function() {
 				$(this).hide();
-			});
+			});*/
 		}
 	});
 
