@@ -9,7 +9,7 @@ function moo() {
 		cnt = resp.length;
 		
 		if (cnt > 0)
-			$(".msg").css("background-color", "#ffff00").text(cnt + " new quotes found. Please, <a href='#' id='update_msg'>update</a>!").fadeIn('slow').delay(20000).fadeOut('slow');
+			$(".msg").css("background-color", "#ffff00").text('<a href="#" id="update_msg">' + cnt + " new quotes found. Please, update!</a>").fadeIn('slow').delay(20000).fadeOut('slow');
 	});
 
 	setTimeout("moo()", 30000);
