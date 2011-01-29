@@ -6,24 +6,8 @@ function moo() {
 	var cnt = 0, type = "";
 	var id = $("div.quote:first").attr("id");
 
-	$.getJSON('/after/' + id, function(resp) {
-		//cnt = resp.length;
-		
-		/*if (cnt > 0)*/ {
-			//$(".msg").css("background-color", "#ffff00").text(cnt + " new quotes found. Click here to update").fadeIn('slow').delay(20000).fadeOut('slow');
-		
-			//var n = $(".content > .quote").size();
-
-			$.get("/after/" + id, function(data) {
-				$("div#" + id).before(data);
-			});
-
-			/*n = $(".content > .quote").size() - n;
-
-			$(".content > .quote:lt(" + n + ")").each(function() {
-				$(this).hide();
-			});*/
-		}
+	$.get("/after/" + id, function(data) {
+		$("div#" + id).before(data);
 	});
 
 	setTimeout("moo()", 30000);
