@@ -13,10 +13,11 @@ $(document).ready(function() {
 			data: $("form.new_quote").serialize(), 
 			success:*/
 		$.post('/ajax_new', $('form.new_quote').serialize(), function(data) {
-				alert(data);
-
 				if (data == "ok") {
 					$(".msg").text("Ok").fadeIn('slow').delay(1000).fadeOut('slow');
+					alert("moo");
+				} else {
+					alert("foo");
 				}
 			}/*,
 			error: function(xhr, opts, err) {
