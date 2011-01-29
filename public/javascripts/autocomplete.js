@@ -6,7 +6,7 @@ function moo() {
 	var cnt = 0, type = "";
 
 	$.getJSON('/after/' + $("div.quote:first").attr("id"), function(data) {
-		cnt = $.parseJSON(data).length;
+		//cnt = $.parseJSON(data).length;
 		alert("Type: " + typeof data);
 	});
 
