@@ -5,14 +5,12 @@ onerror = function moo(msg, url, line) {
 function moo() {
 	var cnt = 0, type = "";
 
-	$.getJSON('/after/' + $("div.quote:first").attr("id"), function(data) {
-		cnt = data.length;
+	$.getJSON('/after/' + $("div.quote:first").attr("id"), function(resp) {
+		cnt = resp.length;
 	});
 	
-	alert(cnt);
-
 	if (cnt > 0)
-		$(".msg").css("background-color", "#ffff00").text(cnt + " new quotes found. Please, update!").fadeIn('slow').delay(10000).fadeOut('slow');
+		$(".msg").css("background-color", "#ffff00").text(cnt + " new quotes found. Please, update!").fadeIn('slow').delay(20000).fadeOut('slow');
 
 	setTimeout("moo()", 60000);
 }
