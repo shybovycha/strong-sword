@@ -2,19 +2,19 @@ onerror = function moo(msg, url, line) {
 	//alert('Error: ' + msg + '\nURL: ' + url + '\nLine: ' + line);
 }
 
+function moo() {
+	var cnt = 0;
+
+	$.getJSON('/after/' + $("div.quote:first").attr("id"), function(data) {
+		cnt = data.length;
+	});
+
+	$(".msg").css("background-color", "#ffff00").fadeIn('slow').delay(10000).fadeOut('slow');
+
+	setTimeout("moo()", 30000);
+}
+
 $(document).ready(function() {
-	function moo() {
-		var cnt = 0;
-		
-		$.getJSON('/after/' + $("div.quote:first").attr("id"), function(data) {
-			cnt = data.length;
-		});
-
-		$(".msg").css("background-color", "#ffff00").fadeIn('slow').delay(10000).fadeOut('slow');
-
-		setTimeout("moo()", 30000);
-	}
-
 	var to = setTimeout("moo()", 30000);
 
 	$.getJSON("/author_list", function(data) { 
