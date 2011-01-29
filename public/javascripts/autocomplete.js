@@ -19,8 +19,8 @@ $(document).ready(function() {
 			}/*,
 			error: function(xhr, opts, err) {
 				alert(xhr.status + '\n\n' + err);
-			}*/
-		});
+			}}*/
+		);
 
 		return false;
 	});
