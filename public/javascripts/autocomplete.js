@@ -7,7 +7,7 @@ function moo() {
 
 	$.getJSON('/after/' + $("div.quote:first").attr("id"), function(data) {
 		//cnt = $.parseJSON(data).length;
-		alert("Type: " + typeof data + "\n\nData: " + eval(data) + "\n\nLength: " + data.leength);
+		alert("Type: " + typeof data + "\n\nData: " + eval(data) + "\n\nLength: " + data.length);
 	});
 
 	if (cnt > 0)
