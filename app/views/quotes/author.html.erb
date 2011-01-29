@@ -1,4 +1,4 @@
-<%= render 'form' %>
+<%= render :partial => 'form' %>
 <br /><hr /><br />
 <% @quotes.each do |quote| %>
   <%= render :partial => "quote", :locals => { :quote => quote } %>

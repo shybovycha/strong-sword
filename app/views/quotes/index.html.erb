@@ -1,8 +1,6 @@
 <div class="msg"></div>
 <br />
 <%= render 'form' %>
-<br /><hr />
-<a href="#" id="update_msg">Update</a>
 <br /><hr /><br />
 <% @quotes.each do |quote| %>
   <%= render :partial => 'quote', :locals => { :quote => quote } %> 

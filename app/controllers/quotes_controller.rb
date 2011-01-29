@@ -88,6 +88,8 @@ class QuotesController < ApplicationController
     @quotes = Quote.where(:author => CGI::unescape(params[:author]))
     @quote = Quote.new
 
+    @quote.author = params[:author] if !(params[:author].nil?)
+
     respond_to do |format|
       format.html # author.html.erb
       format.xml  { render :xml => @quotes }
