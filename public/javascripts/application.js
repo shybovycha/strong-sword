@@ -14,8 +14,8 @@ function moo() {
 		
 			var n = $(".content > .quote").size();
 
-			$.get("/after/" + id, function(resp) {
-				$("div#" + id).before(resp);
+			$.get("/after/" + id, function(data) {
+				$("div#" + id).before(data);
 			});
 
 			n = $(".content > .quote").size() - n;
