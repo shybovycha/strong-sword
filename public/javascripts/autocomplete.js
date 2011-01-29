@@ -5,13 +5,11 @@ onerror = function moo(msg, url, line) {
 $(document).ready(function() {
 	$.getJSON("/author_list", function(data) { $("#quote_author").autocomplete({ source: data, minLength: 1 }) });
 	$("form.new_quote > .actions > [type=submit]").live("click", function() {
-		alert($("form.new_quote").serialize());
-
 		$.ajax({
 			type: 'POST',
 			url: '/quotes/create', 
 			data: $("form.new_quote").serialize(), 
-			dataTpe: 'json',
+			dataType: 'json',
 			success: function(data) {
 				/*if (data.status == "ok") {
 					$(".msg").text("Ok").fadeIn('slow').delay(1000).fadeOut('slow');
