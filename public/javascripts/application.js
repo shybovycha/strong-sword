@@ -7,7 +7,7 @@ function moo() {
 	var id = $("div.quote:first").attr("id");
 
 	$.getJSON("/after/" + id, function(data) {
-		var cnt = resp.length;
+		var cnt = data.length;
 
 		if (cnt > 0)
 			$(".msg").css("backgrount-color", "#ffff00").text(cnt + " new quotes added. Please, update").fadeIn('slow').delay(20000).fadeOut('slow');
@@ -23,7 +23,7 @@ $(document).ready(function() {
 		$("#quote_author").autocomplete({ source: data, minLength: 1 }) 
 	});
 
-	$("form.new_quote > .actions > [type=submit]").one("click", function() {
+	$("form.new_quote > .actions > [type=submit]").live("click", function() {
 		$.post('/ajax_new', $('form.new_quote').serialize(), function(resp) {
 				resp = $.parseJSON(resp);
 
