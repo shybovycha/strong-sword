@@ -6,8 +6,11 @@ function moo() {
 	var cnt = 0, type = "";
 	var id = $("div.quote:first").attr("id");
 
-	$.get("/after/" + id, function(data) {
-		$("div#" + id).before(data);
+	$.getJSON("/after/" + id, function(data) {
+		var cnt = resp.length;
+
+		if (cnt > 0)
+			$(".msg").css("backgrount-color", "#ffff00").text(cnt + " new quotes added. Please, update").fadeIn('slow').delay(20000).fadeOut('slow');
 	});
 
 	setTimeout("moo()", 30000);
@@ -29,20 +32,8 @@ $(document).ready(function() {
 					$("#quote_author,#quote_body").each(function(i,e) {
 						$(this).val("");
 					});
-				}/* else {
-					$(".msg").css("background-color", "#fe0000").text("Something went wrong. Please, retry").fadeIn('slow').delay(5000).fadeOut('slow');
-				}*/
+				}
 			});
-
-		return false;
-	});
-
-	$("#msg").one("click", function() {
-		$(".content > .quote:hidden").each(function() {
-			$(this).show();
-		});
-
-		$(this).hide();
 
 		return false;
 	});

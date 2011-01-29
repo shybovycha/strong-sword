@@ -60,8 +60,8 @@ class QuotesController < ApplicationController
     end
 
     respond_to do |format|
-      format.html { render :layout => "after" } # after.html.erb
-      format.js { render :layout => "after" } #:json => @quotes.to_json }
+      format.html # after.html.erb
+      format.js { render :json => @quotes.to_json }
     end
   end
 
