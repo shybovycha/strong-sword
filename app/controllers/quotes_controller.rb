@@ -190,7 +190,8 @@ class QuotesController < ApplicationController
     @quote.destroy
 
     respond_to do |format|
-      format.html { redirect_to(admin_url) }
+      #format.html { redirect_to(admin_url) }
+      format.html { redirect_to request.referer }
       format.xml  { head :ok }
     end
   end
