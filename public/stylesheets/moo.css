@@ -26,11 +26,11 @@ input[type="text"]:focus, textarea:focus {
 }
 
 .moo-ok {
-  text-color:#00fe00;
+  background-color:#00fe00;
 }
 
 .moo-error {
-  text-color:#fe0000;
+  background-color:#fe0000;
 }
 
 .quote {
