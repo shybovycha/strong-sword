@@ -22,7 +22,7 @@ $(document).ready(function() {
 		$("#quote_author").autocomplete({ source: data, minLength: 1 }) 
 	});
 
-	$("form.new_quote > .actions > [type=submit]").click(function() {
+	$("form.new_quote > .actions > [type=submit]").one("click", function() {
 		$.post('/ajax_new', $('form.new_quote').serialize(), function(resp) {
 				resp = $.parseJSON(resp);
 
@@ -39,7 +39,7 @@ $(document).ready(function() {
 		return false;
 	});
 
-	$("#update_msg").live("click", function() {
+	$("#update_msg").one("click", function() {
 		var id = $("div.quote:first").attr("id");
 
 		$.get("/after/" + id + "#content", function(resp) {
