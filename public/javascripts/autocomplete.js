@@ -8,9 +8,11 @@ function moo() {
 	$.getJSON('/after/' + $("div.quote:first").attr("id"), function(data) {
 		cnt = data.length;
 	});
+	
+	alert(cnt);
 
 	if (cnt > 0)
-		$(".msg").css("background-color", "#ffff00").text(cnt + "(" + type + ") new quotes found. Please, update!").fadeIn('slow').delay(10000).fadeOut('slow');
+		$(".msg").css("background-color", "#ffff00").text(cnt + " new quotes found. Please, update!").fadeIn('slow').delay(10000).fadeOut('slow');
 
 	setTimeout("moo()", 60000);
 }
@@ -28,7 +30,9 @@ $(document).ready(function() {
 
 				if (resp[0].done == "ok") {
 					$(".msg").css("background-color", "#00fe00").text("Ok").fadeIn('slow').delay(5000).fadeOut('slow');
-					$("#quote_author,#quote_body").text("");
+					$("#quote_author,#quote_body")each(function(e) {
+						$(this).text("");
+					});
 				} else {
 					$(".msg").css("background-color", "#fe0000").text("Something went wrong. Please, retry").fadeIn('slow').delay(5000).fadeOut('slow');
 				}
