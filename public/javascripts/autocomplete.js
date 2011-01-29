@@ -12,5 +12,7 @@ $(document).ready(function() {
 		});*/
 
 		alert("moo");
+
+		return false;
 	});
 });
