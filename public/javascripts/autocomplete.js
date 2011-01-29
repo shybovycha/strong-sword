@@ -3,7 +3,10 @@ onerror = function moo(msg, url, line) {
 }
 
 $(document).ready(function() {
-	$.getJSON("/author_list", function(data) { $("#quote_author").autocomplete({ source: data, minLength: 1 }) });
+	$.getJSON("/author_list", function(data) { 
+		$("#quote_author").autocomplete({ source: data, minLength: 1 }) 
+	});
+
 	$("form.new_quote > .actions > [type=submit]").live("click", function() {
 		$.post('/ajax_new', $('form.new_quote').serialize(), function(resp) {
 				resp = jQuery.parseJSON(resp);
@@ -14,6 +17,16 @@ $(document).ready(function() {
 					$(".msg").css("background-color", "#fe0000").text("Something went wrong. Please, retry").fadeIn('slow').delay(2500).fadeOut('slow');
 				}
 			});
+
+		return false;
+	});
+
+	$("#update_msg").live("click", function() {
+		var id = $("div.quote:first").attr("id");
+
+		$.getJSON('/quotes/after/' + id, function(data) {
+			alert("Data: " + data + "\n\n(" + typeof data + ")");
+		});
 
 		return false;
 	});

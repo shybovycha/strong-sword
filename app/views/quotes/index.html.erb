@@ -1,7 +1,11 @@
+<div class="msg"></div>
+<br />
 <%= render 'form' %>
 <br /><hr /><br />
+<a href="#" id="update_msg">Update</a>
+<br /><hr /><br />
 <% @quotes.each do |quote| %>
-  <div class="quote">
+  <div class="quote" id="<%= quote.id %>">
     <p class="quote-author"><strong><%= link_to quote.author, author_path(quote.author) %></strong></p>
     <p class="quote-body"><%= quote.body %></p>
     <p>
