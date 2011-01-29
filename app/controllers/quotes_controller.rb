@@ -54,9 +54,9 @@ class QuotesController < ApplicationController
   # GET /after/id
   def after
     if params[:id].nil?
-      @quotes = Quote.limit(10).offset(0).order("created_at asc")
+      @quotes = Quote.where(:approved => true).limit(10).offset(0).order("created_at asc")
     else
-      @quotes = Quote.where("id > ?", params[:id]).limit(10).offset(0).order("created_at asc")
+      @quotes = Quote.where("approved = true AND id > ?", params[:id]).limit(10).offset(0).order("created_at asc")
     end
 
     respond_to do |format|
@@ -67,11 +67,11 @@ class QuotesController < ApplicationController
 
   # GET /before
   # GET /before/id
-  def after
+  def before
     if params[:id].nil?
-      @quotes = Quote.order("created_at desc").limit(10).offset(0)
+      @quotes = Quote.where(:approved => true).order("created_at desc").limit(10).offset(0)
     else
-      @quotes = Quote.where("id < ?", params[:id]).order("created_at desc").limit(10).offset(0)
+      @quotes = Quote.where("approved = true AND id < ?", params[:id]).order("created_at desc").limit(10).offset(0)
     end
 
     respond_to do |format|
