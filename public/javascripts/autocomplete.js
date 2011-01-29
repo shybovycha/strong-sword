@@ -9,9 +9,9 @@ $(document).ready(function() {
 				resp = jQuery.parseJSON(resp);
 
 				if (resp[0].done == "ok") {
-					$(".msg").toggleClass("msg-ok").text("Ok").fadeIn('slow').delay(2500).fadeOut('slow');
+					$(".msg").css("background-color", "#00fe00").text("Ok").fadeIn('slow').delay(2500).fadeOut('slow');
 				} else {
-					$(".msg").toggleClass("msg-error").text("Something went wrong. Please, retry").fadeIn('slow').delay(2500).fadeOut('slow');
+					$(".msg").css("background-color", "#fe0000").text("Something went wrong. Please, retry").fadeIn('slow').delay(2500).fadeOut('slow');
 				}
 			});
 

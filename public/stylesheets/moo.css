@@ -25,14 +25,6 @@ input[type="text"]:focus, textarea:focus {
   display:none;
 }
 
-.moo-ok {
-  background-color:#00fe00;
-}
-
-.moo-error {
-  background-color:#fe0000;
-}
-
 .quote {
   display: block;
   background-color: #EBDC8E;
