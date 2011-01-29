@@ -14,6 +14,10 @@ StrongSword::Application.routes.draw do
   match 'help/about' => "statics#about"
   match 'author_list' => 'quotes#author_list'
   match 'author/:author' => 'quotes#author', :as => :author
+  match 'after/' => 'quotes#after'
+  match 'after/:id' => 'quotes#after'
+  match 'before/' => 'quotes#before'
+  match 'before/:id' => 'quotes#before'
   match ':controller(/:id(/:action))'
   match ':controller(/:id(/:action))/lang/:lang'
   match ':controller(/:action)/lang/:lang'

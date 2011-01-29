@@ -49,7 +49,37 @@ class QuotesController < ApplicationController
 	  format.js  { render :json => a.to_json }
     end
   end
-  
+
+  # GET /after
+  # GET /after/id
+  def quotes_after
+    if params[:id].nil?
+      @quotes = Quote.limit(10).offset(0).order("created_at asc")
+    else
+      @quotes = Quote.where("id > ?", params[:id]).limit(10).offset(0).order("created_at asc")
+    end
+
+    respond_to do |format|
+      #format.html # after.html.erb
+      format.js { render :json => @quotes.to_json }
+    end
+  end
+
+  # GET /before
+  # GET /before/id
+  def after
+    if params[:id].nil?
+      @quotes = Quote.order("created_at desc").limit(10).offset(0)
+    else
+      @quotes = Quote.where("id < ?", params[:id]).order("created_at desc").limit(10).offset(0)
+    end
+
+    respond_to do |format|
+      #format.html # before.html.erb
+      format.js { render :json => @quotes.to_json }
+    end
+  end
+
   # GET /moo
   # GET /quotes/moo
   def author
@@ -104,10 +134,13 @@ class QuotesController < ApplicationController
 
     @quote.approved = false if @quote.approved.nil?
 
+    @js_response = [ :status => "ok" ].to_json
+
     respond_to do |format|
       if @quote.save
         format.html { redirect_to(@quote, :notice => :quote_created) }
         format.xml  { render :xml => @quote, :status => :created, :location => @quote }
+	format.js { render :json => @js_response }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @quote.errors, :status => :unprocessable_entity }
