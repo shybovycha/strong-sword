@@ -10,11 +10,18 @@ function moo() {
 		cnt = resp.length;
 		
 		if (cnt > 0) {
-			$(".msg").css("background-color", "#ffff00").text(cnt + " new quotes found. Please, update!").fadeIn('slow').delay(20000).fadeOut('slow');
+			$(".msg").css("background-color", "#ffff00").text(cnt + " new quotes found. Click here to update").fadeIn('slow').delay(20000).fadeOut('slow');
 		
-		
+			var n = $(".content > .quote").size();
+
 			$.get("/after/" + id, function(resp) {
 				$("div#" + id).before(resp);
+			});
+
+			n = $(".content > .quote").size() - n;
+
+			$(".content > .quote:lt(" + n + ")").each(function() {
+				$(this).hide();
 			});
 		}
 	});
@@ -46,8 +53,11 @@ $(document).ready(function() {
 		return false;
 	});
 
-	$("#update_msg").one("click", function() {
-		
+	$("#msg").one("click", function() {
+		$(".content > .quote:hidden").each(function() {
+			$(this).show();
+		});
+
 		$(this).hide();
 
 		return false;
