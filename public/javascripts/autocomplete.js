@@ -6,11 +6,12 @@ function moo() {
 	var cnt = 0, type = "";
 
 	$.getJSON('/after/' + $("div.quote:first").attr("id"), function(data) {
-		cnt = data.size();
+		cnt = data.length;
 		type = typeof data;
 	});
 
-	$(".msg").css("background-color", "#ffff00").text(cnt + "(" + type + ") new quotes found. Please, update!").fadeIn('slow').delay(10000).fadeOut('slow');
+	if (cnt > 0)
+		$(".msg").css("background-color", "#ffff00").text(cnt + "(" + type + ") new quotes found. Please, update!").fadeIn('slow').delay(10000).fadeOut('slow');
 
 	setTimeout("moo()", 60000);
 }
