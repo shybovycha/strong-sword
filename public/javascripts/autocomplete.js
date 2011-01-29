@@ -10,7 +10,7 @@ $(document).ready(function() {
 					$(".msg").text("Ok").fadeIn('slow').delay(1000).fadeOut('slow');
 					alert("moo");
 				} else {
-					alert("foo\n\n" + resp);
+					alert("foo\n\n" + resp + "(" + typeof resp + ")");
 				}
 			});
 
