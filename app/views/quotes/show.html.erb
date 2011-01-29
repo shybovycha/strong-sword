@@ -1,12 +1,2 @@
 <p id="notice"><%= notice %></p>
-<br />
-<p>
-  <b><%= t(:author) %></b>
-  <%= @quote.author %> ( <%= t(approved?) %> )
-</p>
-
-<p class="quote-body">
-  <%= @quote.body %>
-</p>
-
-
+<%= render "quote" %>
