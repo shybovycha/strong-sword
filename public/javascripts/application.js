@@ -40,12 +40,11 @@ $(document).ready(function() {
 	});
 
 	$("#update_msg").live("click", function() {
-		/*var id = $("div.quote:first").attr("id");
+		var id = $("div.quote:first").attr("id");
 
-		$.getJSON('/after/' + id, function(data) {
-			$.each(data, function() {
-			});
-		});*/
+		$.get("/after/" + id, function(resp) {
+			$("div.quote:first").before(resp);
+		});
 
 		return false;
 	});

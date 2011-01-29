@@ -22,11 +22,11 @@ class QuotesController < ApplicationController
 
     quote = Quote.find(params[:id])
 
-    redirect_to '/admin/' if quote.nil?
+    redirect_to request.referer if quote.nil?
 
     quote.update_attribute(:approved, true)
 
-    redirect_to '/admin/'
+    redirect_to request.referer
   end
 
   def admin
@@ -60,7 +60,7 @@ class QuotesController < ApplicationController
     end
 
     respond_to do |format|
-      #format.html # after.html.erb
+      format.html # after.html.erb
       format.js { render :json => @quotes.to_json }
     end
   end
