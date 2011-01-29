@@ -9,7 +9,7 @@ function moo() {
 		cnt = resp.length;
 		
 		if (cnt > 0)
-			$(".msg").css("background-color", "#ffff00").text(cnt + " new quotes found. Please, update!").fadeIn('slow').delay(20000).fadeOut('slow');
+			$(".msg").css("background-color", "#ffff00").text(cnt + " new quotes found. Please, <a href='#' id='update_msg'>update</a>!").fadeIn('slow').delay(20000).fadeOut('slow');
 	});
 
 	setTimeout("moo()", 30000);
@@ -42,7 +42,7 @@ $(document).ready(function() {
 	$("#update_msg").live("click", function() {
 		var id = $("div.quote:first").attr("id");
 
-		$.get("/after/" + id, function(resp) {
+		$.get("/after/" + id + "#content", function(resp) {
 			$("div.quote:first").before(resp);
 		});
 
