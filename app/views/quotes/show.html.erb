@@ -1,2 +1,2 @@
 <p id="notice"><%= notice %></p>
-<%= render "quote" %>
+<%= render :partial => "quote", :locals => { :quote => @quote } %>
