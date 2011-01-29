@@ -9,13 +9,13 @@ function moo() {
 		cnt = data.length;
 	});
 
-	$(".msg").css("background-color", "#ffff00").fadeIn('slow').delay(10000).fadeOut('slow');
+	$(".msg").css("background-color", "#ffff00").text(cnt + " new quotes found. Please, update!").fadeIn('slow').delay(10000).fadeOut('slow');
 
-	setTimeout("moo()", 30000);
+	setTimeout("moo()", 60000);
 }
 
 $(document).ready(function() {
-	var to = setTimeout("moo()", 30000);
+	var to = setTimeout("moo()", 60000);
 
 	$.getJSON("/author_list", function(data) { 
 		$("#quote_author").autocomplete({ source: data, minLength: 1 }) 
