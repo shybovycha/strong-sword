@@ -7,7 +7,8 @@ $(document).ready(function() {
 	$("form.new_quote > .actions > [type=submit]").live("click", function() {
 		alert($("form.new_quote").serialize());
 
-		$.post("/quotes/ajax_new", $("form.new_quote").serialize(), function(data) {
+		//$.post("/quotes/ajax_new", $("form.new_quote").serialize(), function(data) {
+		$.getJSON("quotes/create", $("form.new_quote").serialize(), function(data) {
 			/*if (data.status == "ok") {
 				$(".msg").text("Ok").fadeIn('slow').delay(1000).fadeOut('slow');
 			}*/
