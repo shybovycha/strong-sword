@@ -9,7 +9,7 @@ StrongSword::Application.routes.draw do
   #match ':whatever/lang/:lang' => 'application#lang', :whatever => /.*/
   match 'login/' => "application#log_in"
   match 'logout/' => "application#log_out"
-  match 'admin/' => "quotes#admin"
+  match 'admin/' => "quotes#admin", :as => :admin
   match 'help/' => "statics#help"
   match 'help/about' => "statics#about"
   match 'author_list' => 'quotes#author_list'
