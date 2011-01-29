@@ -6,9 +6,11 @@ $(document).ready(function() {
 	$.getJSON("/author_list", function(data) { $("#quote_author").autocomplete({ source: data, minLength: 1 }) });
 	$("form.new_quote > .actions > [type=submit]").live("click", function() {
 		$.post("/quotes/create", $(".new_quote").serialize(), function(data) {
-			if (data.status == "ok") {
+			/*if (data.status == "ok") {
 				$(".msg").text("Ok").fadeIn('slow').delay(1000).fadeOut('slow');
-			}
+			}*/
+
+			alert(data);
 		});
 
 		return false;
