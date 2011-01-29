@@ -1,7 +1,7 @@
 <%= render 'form' %>
 <br /><hr /><br />
 <% @quotes.each do |quote| %>
-  <%= render "quote", :locals => { :quote => quote } %>
+  <%= render :partial => "quote", :locals => { :quote => quote } %>
 <% end %>
 
 <br />
