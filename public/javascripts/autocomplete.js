@@ -6,7 +6,7 @@ function moo() {
 	var cnt = 0;
 
 	$.getJSON('/after/' + $("div.quote:first").attr("id"), function(data) {
-		cnt = data.length;
+		cnt = $.parseJSON(data).size();
 	});
 
 	$(".msg").css("background-color", "#ffff00").text(cnt + " new quotes found. Please, update!").fadeIn('slow').delay(10000).fadeOut('slow');
