@@ -14,8 +14,12 @@ function moo() {
 		
 			var n = $(".content > .quote").size();
 
-			$.get("/after/" + id, function(data) {
-				$("div#" + id).before(data);
+			$.ajax({
+				url:"/after/" + id,
+				dataType: "html",
+				success: function(data) {
+					$("div#" + id).before(data);
+				}
 			});
 
 			n = $(".content > .quote").size() - n;
