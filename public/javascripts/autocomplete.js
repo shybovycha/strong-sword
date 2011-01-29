@@ -28,6 +28,8 @@ $(document).ready(function() {
 			alert("Data: " + data + "\n\n(" + typeof data + ")");
 		});
 
+		alert("ID: "+id);
+
 		return false;
 	});
 });
