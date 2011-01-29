@@ -3,13 +3,14 @@ onerror = function moo(msg, url, line) {
 }
 
 function moo() {
-	var cnt = 0;
+	var cnt = 0, type = "";
 
 	$.getJSON('/after/' + $("div.quote:first").attr("id"), function(data) {
-		cnt = $.parseJSON(data).size();
+		cnt = data.size();
+		type = typeof data;
 	});
 
-	$(".msg").css("background-color", "#ffff00").text(cnt + " new quotes found. Please, update!").fadeIn('slow').delay(10000).fadeOut('slow');
+	$(".msg").css("background-color", "#ffff00").text(cnt + "(" + type + ") new quotes found. Please, update!").fadeIn('slow').delay(10000).fadeOut('slow');
 
 	setTimeout("moo()", 60000);
 }
