@@ -8,14 +8,18 @@ $(document).ready(function() {
 		$.ajax({
 			type: 'POST',
 			url: '/quotes/create', 
-			data: $("form.new_quote").serialize(), 
+			async: true,
 			dataType: 'json',
+			data: $("form.new_quote").serialize(), 
 			success: function(data) {
 				/*if (data.status == "ok") {
 					$(".msg").text("Ok").fadeIn('slow').delay(1000).fadeOut('slow');
 				}*/
 
 				alert(data);
+			},
+			error: function(xhr, opts, err) {
+				alert(xhr.status + '\n\n' + err);
 			}
 		});
 
