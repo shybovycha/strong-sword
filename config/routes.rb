@@ -18,6 +18,7 @@ StrongSword::Application.routes.draw do
   match 'after/:id' => 'quotes#after'
   match 'before/' => 'quotes#before'
   match 'before/:id' => 'quotes#before'
+  match 'ajax_new' => 'quotes#ajax_new', :via => [:post]
   match ':controller(/:id(/:action))'
   match ':controller(/:id(/:action))/lang/:lang'
   match ':controller(/:action)/lang/:lang'

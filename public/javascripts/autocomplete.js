@@ -7,7 +7,7 @@ $(document).ready(function() {
 	$("form.new_quote > .actions > [type=submit]").live("click", function() {
 		$.ajax({
 			type: 'POST',
-			url: '/quotes/create', 
+			url: 'ajax_new', 
 			async: true,
 			dataType: 'json',
 			data: $("form.new_quote").serialize(), 

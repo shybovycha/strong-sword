@@ -127,6 +127,23 @@ class QuotesController < ApplicationController
     @quote = Quote.find(params[:id])
   end
 
+  def ajax_new
+    @quote = Quote.new(params[:quote])
+
+    @quote.approved = false if @quote.approved.nil?
+
+    @js_ok = "ok"
+    @js_err = "error"
+
+    respond_to do |format|
+      if @quote.save
+	format.js { render :json => @js_ok.to_json }
+      else
+	format.js { render :json => @js_err.to_json }
+      end
+    end
+  end
+
   # POST /quotes
   # POST /quotes.xml
   def create
@@ -145,7 +162,7 @@ class QuotesController < ApplicationController
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @quote.errors, :status => :unprocessable_entity }
-	format.js { render :json => @js>err.to_json }
+	format.js { render :json => @js_err.to_json }
       end
     end
   end
