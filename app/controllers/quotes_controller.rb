@@ -135,13 +135,15 @@ class QuotesController < ApplicationController
     @quote.approved = false if @quote.approved.nil?
 
     @js_response = [ :status => "ok" ].to_json
+    @js_error = [ :status => "error" ].to_json
 
     respond_to do |format|
       if @quote.save
+	format.js { render :json => @js_response }
         format.html { redirect_to(@quote, :notice => :quote_created) }
         format.xml  { render :xml => @quote, :status => :created, :location => @quote }
-	format.js { render :json => @js_response }
       else
+	format.js { render :json => @js_error }
         format.html { render :action => "new" }
         format.xml  { render :xml => @quote.errors, :status => :unprocessable_entity }
       end
