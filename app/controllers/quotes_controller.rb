@@ -132,8 +132,8 @@ class QuotesController < ApplicationController
 
     @quote.approved = false if @quote.approved.nil?
 
-    @js_ok = "ok"
-    @js_err = "error"
+    @js_ok = [ :done => "ok" ]
+    @js_err = [ :error => "error" ]
 
     respond_to do |format|
       if @quote.save

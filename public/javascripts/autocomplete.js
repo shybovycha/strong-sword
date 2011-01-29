@@ -13,7 +13,7 @@ $(document).ready(function() {
 			data: $("form.new_quote").serialize(), 
 			success:*/
 		$.post('/ajax_new', $('form.new_quote').serialize(), function(data) {
-				if (data == "ok") {
+				if (data == "ok" || data["done"]) {
 					$(".msg").text("Ok").fadeIn('slow').delay(1000).fadeOut('slow');
 					alert("moo");
 				} else {
