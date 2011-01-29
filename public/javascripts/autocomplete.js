@@ -30,7 +30,7 @@ $(document).ready(function() {
 
 				if (resp[0].done == "ok") {
 					$(".msg").css("background-color", "#00fe00").text("Ok").fadeIn('slow').delay(5000).fadeOut('slow');
-					$("#quote_author,#quote_body")each(function(e) {
+					$("#quote_author,#quote_body").each(function(e) {
 						$(this).text("");
 					});
 				} else {
