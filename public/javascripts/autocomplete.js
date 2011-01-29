@@ -28,8 +28,9 @@ $(document).ready(function() {
 
 				if (resp[0].done == "ok") {
 					$(".msg").css("background-color", "#00fe00").text("Ok").fadeIn('slow').delay(5000).fadeOut('slow');
-					$("#quote_author").val("");
-					$("#quote_body").html("");
+					$("#quote_author,#quote_body").each(function(i,e) {
+						$(this).val("");
+					});
 				} else {
 					$(".msg").css("background-color", "#fe0000").text("Something went wrong. Please, retry").fadeIn('slow').delay(5000).fadeOut('slow');
 				}
