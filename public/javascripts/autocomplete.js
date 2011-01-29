@@ -24,7 +24,7 @@ $(document).ready(function() {
 	$("#update_msg").live("click", function() {
 		var id = $("div.quote:first").attr("id");
 
-		$.getJSON('/quotes/after/' + id, function(data) {
+		$.getJSON('/after/' + id, function(data) {
 			alert("Data: " + data + "\n\n(" + typeof data + ")");
 		});
 
