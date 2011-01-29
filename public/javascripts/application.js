@@ -31,9 +31,9 @@ $(document).ready(function() {
 					$("#quote_author,#quote_body").each(function(i,e) {
 						$(this).val("");
 					});
-				} else {
+				}/* else {
 					$(".msg").css("background-color", "#fe0000").text("Something went wrong. Please, retry").fadeIn('slow').delay(5000).fadeOut('slow');
-				}
+				}*/
 			});
 
 		return false;
@@ -45,6 +45,8 @@ $(document).ready(function() {
 		$.get("/after/" + id + "#content", function(resp) {
 			$("div.quote:first").before(resp);
 		});
+
+		$(this).hide();
 
 		return false;
 	});
