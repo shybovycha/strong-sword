@@ -7,10 +7,10 @@ function moo() {
 	var id = $("div.quote:first").attr("id");
 
 	$.getJSON('/after/' + id, function(resp) {
-		cnt = resp.length;
+		//cnt = resp.length;
 		
-		if (cnt > 0) {
-			$(".msg").css("background-color", "#ffff00").text(cnt + " new quotes found. Click here to update").fadeIn('slow').delay(20000).fadeOut('slow');
+		/*if (cnt > 0)*/ {
+			//$(".msg").css("background-color", "#ffff00").text(cnt + " new quotes found. Click here to update").fadeIn('slow').delay(20000).fadeOut('slow');
 		
 			//var n = $(".content > .quote").size();
 
