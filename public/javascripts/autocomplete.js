@@ -12,6 +12,7 @@ $(document).ready(function() {
 		});*/
 
 		alert("moo");
+		$(".msg").text("Ok").fadeIn('slow').delay(1000).fadeOut('slow');
 
 		return false;
 	});
