@@ -4,12 +4,19 @@ onerror = function moo(msg, url, line) {
 
 function moo() {
 	var cnt = 0, type = "";
+	var id = $("div.quote:first").attr("id");
 
-	$.getJSON('/after/' + $("div.quote:first").attr("id"), function(resp) {
+	$.getJSON('/after/' + id, function(resp) {
 		cnt = resp.length;
 		
-		if (cnt > 0)
+		if (cnt > 0) {
 			$(".msg").css("background-color", "#ffff00").text(cnt + " new quotes found. Please, update!").fadeIn('slow').delay(20000).fadeOut('slow');
+		
+		
+			$.get("/after/" + id, function(resp) {
+				$("div#" + id).before(resp);
+			});
+		}
 	});
 
 	setTimeout("moo()", 30000);
@@ -40,12 +47,7 @@ $(document).ready(function() {
 	});
 
 	$("#update_msg").one("click", function() {
-		var id = $("div.quote:first").attr("id");
-
-		$.get("/after/" + id + "#content", function(resp) {
-			$("div.quote:first").before(resp);
-		});
-
+		
 		$(this).hide();
 
 		return false;
