@@ -14,7 +14,7 @@ $(document).ready(function() {
 			"longUrl" : $(this).attr("href"),
 			"format" : "json" }, function(data) {
 				if (data.status_code == 200)
-					$(this).attr("href", data.data.url);
+					alert(data.data.url);
 		});
 
 		return false;
