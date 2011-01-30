@@ -15,6 +15,8 @@ $(document).ready(function() {
 			"format" : "json" }, function(data) {
 				if (data.status_code == 200)
 					$(this).attr("href", data.data.url);
-		})
+		});
+
+		return false;
 	});
 });
