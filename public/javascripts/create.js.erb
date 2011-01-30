@@ -1,0 +1,4 @@
+- if @quote.errors.any?
+  $('#data_form').html('#{escape_javascript(render(:partial => "form"))}');
+- else
+  $('#data_grid').prepend('#{escape_javascript(render :partial => "quote", :locals => { :quote => quote })}');

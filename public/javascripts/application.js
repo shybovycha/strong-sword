@@ -22,19 +22,4 @@ $(document).ready(function() {
 	$.getJSON("/author_list", function(data) { 
 		$("#quote_author").autocomplete({ source: data, minLength: 1 }) 
 	});
-
-	$("form.new_quote > .actions > [type=submit]").live("click", function() {
-		$.post('/ajax_new', $('form.new_quote').serialize(), function(resp) {
-				resp = $.parseJSON(resp);
-
-				if (resp[0].done == "ok") {
-					$(".msg").css("background-color", "#00fe00").text("Ok").fadeIn('slow').delay(5000).fadeOut('slow');
-					$("#quote_author,#quote_body").each(function(i,e) {
-						$(this).val("");
-					});
-				}
-			});
-
-		return false;
-	});
 });
