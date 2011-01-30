@@ -6,7 +6,6 @@ StrongSword::Application.routes.draw do
 
   resources :quotes
 
-  #match ':whatever/lang/:lang' => 'application#lang', :whatever => /.*/
   match 'login/' => "application#log_in"
   match 'logout/' => "application#log_out"
   match 'admin/' => "quotes#admin", :as => :admin
@@ -14,11 +13,6 @@ StrongSword::Application.routes.draw do
   match 'help/about' => "statics#about"
   match 'author_list' => 'quotes#author_list'
   match 'author/:author' => 'quotes#author', :as => :author
-  match 'after/' => 'quotes#after'
-  match 'after/:id' => 'quotes#after'
-  match 'before/' => 'quotes#before'
-  match 'before/:id' => 'quotes#before'
-  match 'ajax_new' => 'quotes#ajax_new', :via => [:post]
   match ':controller(/:id(/:action))'
   match ':controller(/:id(/:action))/lang/:lang'
   match ':controller(/:action)/lang/:lang'
