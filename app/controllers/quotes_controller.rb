@@ -50,6 +50,7 @@ class QuotesController < ApplicationController
     end
   end
 
+=begin
   # GET /after
   # GET /after/id
   def after
@@ -64,6 +65,7 @@ class QuotesController < ApplicationController
       format.js { render :json => @quotes.to_json }
     end
   end
+=end
 
   # GET /before
   # GET /before/id
@@ -129,6 +131,7 @@ class QuotesController < ApplicationController
     @quote = Quote.find(params[:id])
   end
 
+=begin
   def ajax_new
     @quote = Quote.new(params[:quote])
 
@@ -145,6 +148,7 @@ class QuotesController < ApplicationController
       end
     end
   end
+=end
 
   # POST /quotes
   # POST /quotes.xml

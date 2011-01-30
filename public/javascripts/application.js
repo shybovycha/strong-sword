@@ -2,7 +2,7 @@ onerror = function moo(msg, url, line) {
 	//alert('Error: ' + msg + '\nURL: ' + url + '\nLine: ' + line);
 }
 
-function moo() {
+/*function moo() {
 	var cnt = 0, type = "";
 	var id = $("div.quote:first").attr("id");
 
@@ -14,10 +14,10 @@ function moo() {
 	});
 
 	setTimeout("moo()", 30000);
-}
+}*/
 
 $(document).ready(function() {
-	var to = setTimeout("moo()", 30000);
+	//var to = setTimeout("moo()", 30000);
 
 	$.getJSON("/author_list", function(data) { 
 		$("#quote_author").autocomplete({ source: data, minLength: 1 }) 
