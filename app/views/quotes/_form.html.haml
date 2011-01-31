@@ -1,0 +1,28 @@
+.msg
+%br
+= form_for(@quote, :remote = true) do |f|
+  - if @quote.errors.any?
+    id="error_explanation"
+      %h2= pluralize(@quote.errors.count, "error")  prohibited this quote from being saved:
+      %ul
+      - @quote.errors.full_messages.each do |msg|
+        %li= msg
+        
+  .field
+    = f.label :author
+    %br
+    = f.text_field :author
+
+  .field
+    = f.label :body
+	%br
+    = f.text_area :body, :size = "60x8"
+
+  - if logged_in? 
+    .field
+    = f.label :approved 
+	%br
+    = f.check_box :approved 
+
+  .actions
+    = f.submit
