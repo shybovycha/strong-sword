@@ -1,4 +1,4 @@
-.quote#=quote.id
+.quote{ :id => "#{quote.id}" }
   %p.quote-author
     %strong= link_to quote.author, author_path(quote.author)
   %p.quote-body
