@@ -1,8 +1,7 @@
-.quote#id
-  = quote.id
-  %p."quote-author"
+.quote#=quote.id
+  %p.quote-author
     %strong= link_to quote.author, author_path(quote.author)
-  %p."quote-body"
+  %p.quote-body
     = quote.body
   %p
     = link_to '#', "#{root_url + quote_path(quote.id)[/\/(.+)/, 1]}", :class => "shorten" 
