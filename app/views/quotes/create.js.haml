@@ -1,7 +1,7 @@
 - if @quote.errors.any?
-  $('#data_form').html('<%= escape_javascript(render(:partial => "form")) %>');
+  $('#data_form').html('#{ escape_javascript(render(:partial => "form")) }');
 - else
-  $('#data_grid').prepend('<%= escape_javascript(render :partial => "quote", :locals => { :quote => @quote }) %>');
+  $('#data_grid').prepend('#{ escape_javascript(render :partial => "quote", :locals => { :quote => @quote }) }');
   $('#quote_author,#quote_body').each(function(i,e) {
     $(this).val("");
   });
