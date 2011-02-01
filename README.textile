@@ -7,7 +7,7 @@ h2. TODO:
   * -JS fixes-
   * -author autocomplete (via JS)-
   * a great CAPTCHA
-  * short-url-links for shares
+  * -short-url-links for shares-
   * basic SEO
   * -AJAX quote adding-
   * parse some quote lists
