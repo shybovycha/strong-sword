@@ -10,7 +10,7 @@ class QuotesController < ApplicationController
 
     @quote = Quote.new
     #@quotes = Quote.where(:approved => true).sort { |a, b| b.created_at <=> a.created_at }
-    @quotes = Quote.where(:approved => true).sort({ |a, b| b.created_at <=> a.created_at }).paginate(:page => params[:page])
+    @quotes = Quote.where(:approved => true).paginate(:page => params[:page], :order => 'created_at DESC')
 
 
     respond_to do |format|

@@ -9,6 +9,7 @@ h2. TODO:
   * a great CAPTCHA
   * -short-url-links for shares-
   * basic SEO
+  * -pagination-
   * -AJAX quote adding-
   * parse some quote lists
   * test site with THOUSANDS (and MOAR!) quotes
