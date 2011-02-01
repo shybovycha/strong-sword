@@ -2,10 +2,12 @@
   <%= render :partial => 'form' %>
 </div>
 <br /><hr /><br />
+<%= will_paginate %>
 <div id="data_grid">
   <% @quotes.each do |quote| %>
     <%= render :partial => 'quote', :locals => { :quote => quote } %> 
   <% end %>
 </div>
+<%= will_paginate %>
 
 <br />

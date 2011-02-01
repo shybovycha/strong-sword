@@ -9,7 +9,9 @@ class QuotesController < ApplicationController
     I18n.locale = params[:lang]
 
     @quote = Quote.new
-    @quotes = Quote.where(:approved => true).sort { |a, b| b.created_at <=> a.created_at }
+    #@quotes = Quote.where(:approved => true).sort { |a, b| b.created_at <=> a.created_at }
+    @quotes = Quote.where(:approved => true).sort({ |a, b| b.created_at <=> a.created_at }).paginate(:page => params[:page])
+
 
     respond_to do |format|
       format.html # index.html.erb

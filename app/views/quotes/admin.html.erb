@@ -1,6 +1,8 @@
 <h1>Unapproved quotes</h1>
+<%= will_paginate %>
 <% @quotes.each do |quote| %>
   <%= render :partial => "quote", :locals => { :quote => quote } %>
 <% end %>
+<%= will_paginate %>
 
 <br />
