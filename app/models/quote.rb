@@ -1,5 +1,5 @@
 class Quote < ActiveRecord::Base
-	attr_reader :per_page
+	cattr_reader :per_page
 
 	@@per_page = 10
 
