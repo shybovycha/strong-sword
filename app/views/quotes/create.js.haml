@@ -5,6 +5,9 @@
   :plain
     $('#data_grid').prepend('#{escape_javascript(render :partial => "quote", :locals => { :quote => @quote })}');
     $('#data_form').html('#{escape_javascript(render(:partial => "form"))}');
+    $('#quote_author,#quote_body').each(function(i,e) {
+      $(this).val("");
+    });
     $.getJSON("/author_list", function(data) { 
       $("#quote_author").autocomplete({ source: data, minLength: 1 }) 
     });
